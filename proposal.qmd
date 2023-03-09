@@ -12,15 +12,23 @@ editor: visual
 library(tidyverse)
 ```
 
-# Data 1
+# Data 1 --\> Winter Olympic Medals.csv
 
 ## Introduction and data
 
 -   Identify the source of the data.
 
+    The source of the data is sports-reference.com
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+The data was collected five years ago and was taken from sports-reference.com. This was initially made into an original visualization that was then further adapted into the current dataset.
+
 -   Write a brief description of the observations.
+
+    The observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more. 
+
+    \
 
 ## Research question
 
