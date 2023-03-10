@@ -166,26 +166,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-1-winter-olympic-medals.csv" id="toc-data-1-winter-olympic-medals.csv" class="nav-link active" data-scroll-target="#data-1-winter-olympic-medals.csv">Data 1 –&gt; Winter Olympic Medals.csv</a>
+  <li><a href="#data-1-winterolympic" id="toc-data-1-winterolympic" class="nav-link active" data-scroll-target="#data-1-winterolympic">Data 1 –&gt; WinterOlympic</a>
   <ul class="collapse">
   <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link" data-scroll-target="#introduction-and-data">Introduction and data</a></li>
   <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
   <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Literature</a></li>
   <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data">Glimpse of data</a></li>
   </ul></li>
-  <li><a href="#data-2" id="toc-data-2" class="nav-link" data-scroll-target="#data-2">Data 2</a>
+  <li><a href="#data-2---edustats" id="toc-data-2---edustats" class="nav-link" data-scroll-target="#data-2---edustats">Data 2 -&gt; Edustats</a>
   <ul class="collapse">
   <li><a href="#introduction-and-data-1" id="toc-introduction-and-data-1" class="nav-link" data-scroll-target="#introduction-and-data-1">Introduction and data</a></li>
   <li><a href="#research-question-1" id="toc-research-question-1" class="nav-link" data-scroll-target="#research-question-1">Research question</a></li>
   <li><a href="#literature-1" id="toc-literature-1" class="nav-link" data-scroll-target="#literature-1">Literature</a></li>
-  <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of data</a></li>
   </ul></li>
-  <li><a href="#data-3" id="toc-data-3" class="nav-link" data-scroll-target="#data-3">Data 3</a>
+  <li><a href="#data-3---week7starwars" id="toc-data-3---week7starwars" class="nav-link" data-scroll-target="#data-3---week7starwars">Data 3 -&gt; week7starwars</a>
   <ul class="collapse">
   <li><a href="#introduction-and-data-2" id="toc-introduction-and-data-2" class="nav-link" data-scroll-target="#introduction-and-data-2">Introduction and data</a></li>
   <li><a href="#research-question-2" id="toc-research-question-2" class="nav-link" data-scroll-target="#research-question-2">Research question</a></li>
   <li><a href="#literature-2" id="toc-literature-2" class="nav-link" data-scroll-target="#literature-2">Literature</a></li>
-  <li><a href="#glimpse-of-data-2" id="toc-glimpse-of-data-2" class="nav-link" data-scroll-target="#glimpse-of-data-2">Glimpse of data</a></li>
+  <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -213,108 +212,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="data-1-winter-olympic-medals.csv" class="level1">
-<h1>Data 1 –&gt; Winter Olympic Medals.csv</h1>
+<section id="data-1-winterolympic" class="level1">
+<h1>Data 1 –&gt; WinterOlympic</h1>
 <section id="introduction-and-data" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and data</h2>
 <ul>
 <li><p>Identify the source of the data.</p>
-<p>The source of the data is sports-reference.com</p></li>
+<p><strong>The source of the data is sports-reference.com</strong></p></li>
 <li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
 </ul>
-<p>The data was collected five years ago and was taken from sports-reference.com. This was initially made into an original visualization that was then further adapted into the current dataset.</p>
+<p><strong>The data was collected five years ago and scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current dataset.</strong></p>
 <ul>
 <li><p>Write a brief description of the observations.</p>
-<p>The observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more.&nbsp;<br>
-</p></li>
+<p><strong>The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more.</strong></p></li>
 </ul>
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research question</h2>
 <ul>
-<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p></li>
-<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p></li>
-<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p></li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<p><strong>What are the factors that influence Winter Olympic success across countries, events, and years?</strong></p></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<p><strong>The research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. The study involves collecting data on the year of the Olympics, the event in which the medal was won, the type of medal won, and the country the athlete was representing. Research will identify patterns and trends in medal-winning performances across different countries, events, and time periods. We hypothesize that more populous countries, and younger participants will achieve more wins each year in the Winter Olympics.</strong></p></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<p><strong>The variables represented are all categorical variables. This includes the countries, athletes, events, and years.</strong></p></li>
 </ul>
 </section>
 <section id="literature" class="level2">
 <h2 class="anchored" data-anchor-id="literature">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p><a href="https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data"><strong>https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-dat</strong></a><strong>a</strong></p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p><strong>This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR's collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.</strong></p></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<p><strong>Our research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and events.</strong></p></li>
 </ul>
 </section>
 <section id="glimpse-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>edustats <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/edustats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Winter Olympic Medals.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="data-2" class="level1">
-<h1>Data 2</h1>
+<section id="data-2---edustats" class="level1">
+<h1>Data 2 -&gt; Edustats</h1>
 <section id="introduction-and-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<p><strong>The source of the data is the US Department of Education.</strong></p></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<p><strong>This data was finalized on September 14, 2022 and was collected from institutional-level data files containing aggregate data for each institution from 1996-1997 through 2020-21.</strong></p></li>
+<li><p>Write a brief description of the observations.</p>
+<p><strong>The observation shows a statistical summary of colleges throughout the United States. It provides numerical ways of looking at a college, including admission rate, graduation rate, average student debt, average student earnings, test scores of students, average GPAs, and more. We will have many factors to compare students by, and also many ways of measuring how we want to define their success.</strong></p></li>
 </ul>
 </section>
 <section id="research-question-1" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-1">Research question</h2>
 <ul>
-<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p></li>
-<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p></li>
-<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p></li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<p><strong>What factors affect the academic success of students at different colleges? Do things like location, SAT scores, admission rates, and student population impact the outcome of a student?</strong></p></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<p><strong>We will research and analyze if factors such as location, SAT scores, admission rates, and student population impact the academic success of students at different colleges. We will look at class size, student-faculty ratios, quality of education, and support available to students. We hypothesize that these factors do affect academic success (as measured by graduation rates and post-graduation earnings).</strong></p></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<p><strong>Categorical variables include name of college, name of city, name of state, and accredited agency. Quantitative variables include SAT scores, admissions rates, class sizes, and ACT scores.</strong></p></li>
 </ul>
 </section>
 <section id="literature-1" class="level2">
 <h2 class="anchored" data-anchor-id="literature-1">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p><a href="https://www2.ed.gov/about/reports/annual/state-of-states/index.html" class="uri">https://www2.ed.gov/about/reports/annual/state-of-states/index.html</a></p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p><strong>This article shows the 10 highest and lowest performing states in education. It explains how there are disparities in quality of education throughout states which leads to significantly different outcomes in the college and career search process. It then explains that this problem sources from inconsistency in state education policy. There are also differences in student outcomes due to race and place of living.</strong></p></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<p><strong>This article relates to our research question because it examines student success from a location perspective, but also includes disparities looking at factors like race. For example, Massachusetts and Minnesota students being 3x more likely to be proficient in math than West Virginia and Mississippi students is a discovery that we might expand upon in our to answer our research question.</strong><br>
+<br>
+Glimpse of data</p></li>
 </ul>
-</section>
-<section id="glimpse-of-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>week7starwars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/week7_starwars.csv"</span>, <span class="at">check.name =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>edustats <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/edustats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="data-3" class="level1">
-<h1>Data 3</h1>
+<section id="data-3---week7starwars" class="level1">
+<h1>Data 3 -&gt; week7starwars</h1>
 <section id="introduction-and-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<p><strong>This data was collected by Walt Hickey of FiveThirtyEight.</strong></p></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<p><strong>This poll was collected by Walt Hickey via a poll run through SurveyMonkeyAudience. It was given to 1,186 respondents from June 3 to June 6.</strong></p></li>
+<li><p>Write a brief description of the observations.</p>
+<p><strong>The observations are different people that took the survey, or respondents.</strong></p></li>
 </ul>
 </section>
 <section id="research-question-2" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-2">Research question</h2>
 <ul>
-<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p></li>
-<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p></li>
-<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p></li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<p><strong>One research question that we have for this dataset is: How does a respondent's opinion of different Star Wars films and their demographic information impact how favorably they view different characters?</strong></p></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<p><strong>Research will focus on finding trends on the views of characters, reading through public opinion, figuring out how much money was spent per film, and analyzing Star Wars opinions through other demographic factors. We hypothesize that younger people will favor the more recent films and the characters most prevalently seen in these films.</strong></p></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<p><strong>Categorical variables include respondent ID, name of films, whether or not respondent was a fan, whether or not a film was seen or not, the rank of the film, which character was shot first, gender, age, education, household income and location.</strong></p></li>
 </ul>
 </section>
 <section id="literature-2" class="level2">
 <h2 class="anchored" data-anchor-id="literature-2">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p><a href="https://www.rollingstone.com/tv-movies/tv-movie-lists/50-best-star-wars-characters-of-all-time-145533/" class="uri">https://www.rollingstone.com/tv-movies/tv-movie-lists/50-best-star-wars-characters-of-all-time-145533/</a></p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p><strong>The article is about the appeal of the Star Wars franchise across a vast audience. The author notes that even minor characters in the original trilogy led to significant interest in the series and a desire to know more about their stories and origins. The article presents a ranking of the top 50 best characters from the Star Wars films including prequels, sequels, and spin-offs. The author emphasizes that the list includes characters from the most recent films, as well as classic characters from the original trilogy.</strong></p></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<p><strong>Our research question builds off of this article because if a respondent favors certain films over others, they will likely favor certain characters over others based on the film. This article gives us background on the different star wars characters and why viewers may like some over others.</strong></p></li>
 </ul>
 </section>
-<section id="glimpse-of-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
+<section id="glimpse-of-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Winter Olympic Medals.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>week7starwars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/week7_starwars.csv"</span>, <span class="at">check.name =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

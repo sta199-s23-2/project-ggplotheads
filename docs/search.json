@@ -25,49 +25,49 @@
     "href": "proposal.html#introduction-and-data",
     "title": "Project title",
     "section": "Introduction and data",
-    "text": "Introduction and data\n\nIdentify the source of the data.\nThe source of the data is sports-reference.com\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\n\nThe data was collected five years ago and was taken from sports-reference.com. This was initially made into an original visualization that was then further adapted into the current dataset.\n\nWrite a brief description of the observations.\nThe observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more."
+    "text": "Introduction and data\n\nIdentify the source of the data.\nThe source of the data is sports-reference.com\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\n\nThe data was collected five years ago and scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current dataset.\n\nWrite a brief description of the observations.\nThe observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more."
   },
   {
     "objectID": "proposal.html#research-question",
     "href": "proposal.html#research-question",
     "title": "Project title",
     "section": "Research question",
-    "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
+    "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nWhat are the factors that influence Winter Olympic success across countries, events, and years?\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nThe research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. The study involves collecting data on the year of the Olympics, the event in which the medal was won, the type of medal won, and the country the athlete was representing. Research will identify patterns and trends in medal-winning performances across different countries, events, and time periods. We hypothesize that more populous countries, and younger participants will achieve more wins each year in the Winter Olympics.\nIdentify the types of variables in your research question. Categorical? Quantitative?\nThe variables represented are all categorical variables. This includes the countries, athletes, events, and years."
   },
   {
     "objectID": "proposal.html#literature",
     "href": "proposal.html#literature",
     "title": "Project title",
     "section": "Literature",
-    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nProvide a one paragraph summary about the article.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited."
+    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nhttps://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data\nProvide a one paragraph summary about the article.\nThis article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR's collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited.\nOur research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and events."
   },
   {
     "objectID": "proposal.html#glimpse-of-data",
     "href": "proposal.html#glimpse-of-data",
     "title": "Project title",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\nedustats <- read.csv(\"data/edustats.csv\")"
+    "text": "Glimpse of data\n\nWinterOlympic <- read.csv(\"data/Winter Olympic Medals.csv\")"
   },
   {
     "objectID": "proposal.html#introduction-and-data-1",
     "href": "proposal.html#introduction-and-data-1",
     "title": "Project title",
     "section": "Introduction and data",
-    "text": "Introduction and data\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
+    "text": "Introduction and data\n\nIdentify the source of the data.\nThe source of the data is the US Department of Education.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nThis data was finalized on September 14, 2022 and was collected from institutional-level data files containing aggregate data for each institution from 1996-1997 through 2020-21.\nWrite a brief description of the observations.\nThe observation shows a statistical summary of colleges throughout the United States. It provides numerical ways of looking at a college, including admission rate, graduation rate, average student debt, average student earnings, test scores of students, average GPAs, and more. We will have many factors to compare students by, and also many ways of measuring how we want to define their success."
   },
   {
     "objectID": "proposal.html#research-question-1",
     "href": "proposal.html#research-question-1",
     "title": "Project title",
     "section": "Research question",
-    "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
+    "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nWhat factors affect the academic success of students at different colleges? Do things like location, SAT scores, admission rates, and student population impact the outcome of a student?\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nWe will research and analyze if factors such as location, SAT scores, admission rates, and student population impact the academic success of students at different colleges. We will look at class size, student-faculty ratios, quality of education, and support available to students. We hypothesize that these factors do affect academic success (as measured by graduation rates and post-graduation earnings).\nIdentify the types of variables in your research question. Categorical? Quantitative?\nCategorical variables include name of college, name of city, name of state, and accredited agency. Quantitative variables include SAT scores, admissions rates, class sizes, and ACT scores."
   },
   {
     "objectID": "proposal.html#literature-1",
     "href": "proposal.html#literature-1",
     "title": "Project title",
     "section": "Literature",
-    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nProvide a one paragraph summary about the article.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited."
+    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nhttps://www2.ed.gov/about/reports/annual/state-of-states/index.html\nProvide a one paragraph summary about the article.\nThis article shows the 10 highest and lowest performing states in education. It explains how there are disparities in quality of education throughout states which leads to significantly different outcomes in the college and career search process. It then explains that this problem sources from inconsistency in state education policy. There are also differences in student outcomes due to race and place of living.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited.\nThis article relates to our research question because it examines student success from a location perspective, but also includes disparities looking at factors like race. For example, Massachusetts and Minnesota students being 3x more likely to be proficient in math than West Virginia and Mississippi students is a discovery that we might expand upon in our to answer our research question.\n\nGlimpse of data\n\n\nedustats <- read.csv(\"data/edustats.csv\")"
   },
   {
     "objectID": "proposal.html#glimpse-of-data-1",
@@ -81,21 +81,21 @@
     "href": "proposal.html#introduction-and-data-2",
     "title": "Project title",
     "section": "Introduction and data",
-    "text": "Introduction and data\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
+    "text": "Introduction and data\n\nIdentify the source of the data.\nThis data was collected by Walt Hickey of FiveThirtyEight.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nThis poll was collected by Walt Hickey via a poll run through SurveyMonkeyAudience. It was given to 1,186 respondents from June 3 to June 6.\nWrite a brief description of the observations.\nThe observations are different people that took the survey, or respondents."
   },
   {
     "objectID": "proposal.html#research-question-2",
     "href": "proposal.html#research-question-2",
     "title": "Project title",
     "section": "Research question",
-    "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
+    "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nOne research question that we have for this dataset is: How does a respondent's opinion of different Star Wars films and their demographic information impact how favorably they view different characters?\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nResearch will focus on finding trends on the views of characters, reading through public opinion, figuring out how much money was spent per film, and analyzing Star Wars opinions through other demographic factors. We hypothesize that younger people will favor the more recent films and the characters most prevalently seen in these films.\nIdentify the types of variables in your research question. Categorical? Quantitative?\nCategorical variables include respondent ID, name of films, whether or not respondent was a fan, whether or not a film was seen or not, the rank of the film, which character was shot first, gender, age, education, household income and location."
   },
   {
     "objectID": "proposal.html#literature-2",
     "href": "proposal.html#literature-2",
     "title": "Project title",
     "section": "Literature",
-    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nProvide a one paragraph summary about the article.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited."
+    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nhttps://www.rollingstone.com/tv-movies/tv-movie-lists/50-best-star-wars-characters-of-all-time-145533/\nProvide a one paragraph summary about the article.\nThe article is about the appeal of the Star Wars franchise across a vast audience. The author notes that even minor characters in the original trilogy led to significant interest in the series and a desire to know more about their stories and origins. The article presents a ranking of the top 50 best characters from the Star Wars films including prequels, sequels, and spin-offs. The author emphasizes that the list includes characters from the most recent films, as well as classic characters from the original trilogy.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited.\nOur research question builds off of this article because if a respondent favors certain films over others, they will likely favor certain characters over others based on the film. This article gives us background on the different star wars characters and why viewers may like some over others."
   },
   {
     "objectID": "proposal.html#glimpse-of-data-2",

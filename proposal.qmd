@@ -18,31 +18,43 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
-    The source of the data is sports-reference.com
+    **The source of the data is sports-reference.com**
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-The data was collected five years ago and was taken from sports-reference.com. This was initially made into an original visualization that was then further adapted into the current dataset.
+**The data was collected five years ago and scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current dataset.**
 
 -   Write a brief description of the observations.
 
-    The observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more. \
+    **The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more.**
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+    **What are the factors that influence Winter Olympic success across countries, events, and years?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
+    **The research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. The study involves collecting data on the year of the Olympics, the event in which the medal was won, the type of medal won, and the country the athlete was representing. Research will identify patterns and trends in medal-winning performances across different countries, events, and time periods. We hypothesize that more populous countries, and younger participants will achieve more wins each year in the Winter Olympics.**
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
+
+    **The variables represented are all categorical variables. This includes the countries, athletes, events, and years.**
 
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    [**https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-dat**](https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data)**a**
+
 -   Provide a one paragraph summary about the article.
 
+    **This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR\'s collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.**
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+    **Our research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and events.**
 
 ## Glimpse of data
 
@@ -58,27 +70,45 @@ WinterOlympic <- read.csv("data/Winter Olympic Medals.csv")
 
 -   Identify the source of the data.
 
+    **The source of the data is the US Department of Education.**
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    **This data was finalized on September 14, 2022 and was collected from institutional-level data files containing aggregate data for each institution from 1996-1997 through 2020-21.**
+
 -   Write a brief description of the observations.
+
+    **The observation shows a statistical summary of colleges throughout the United States. It provides numerical ways of looking at a college, including admission rate, graduation rate, average student debt, average student earnings, test scores of students, average GPAs, and more. We will have many factors to compare students by, and also many ways of measuring how we want to define their success.**
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+    **What factors affect the academic success of students at different colleges? Do things like location, SAT scores, admission rates, and student population impact the outcome of a student?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
+    **We will research and analyze if factors such as location, SAT scores, admission rates, and student population impact the academic success of students at different colleges. We will look at class size, student-faculty ratios, quality of education, and support available to students. We hypothesize that these factors do affect academic success (as measured by graduation rates and post-graduation earnings).**
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
+
+    **Categorical variables include name of college, name of city, name of state, and accredited agency. Quantitative variables include SAT scores, admissions rates, class sizes, and ACT scores.**
 
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    <https://www2.ed.gov/about/reports/annual/state-of-states/index.html>
+
 -   Provide a one paragraph summary about the article.
+
+    **This article shows the 10 highest and lowest performing states in education. It explains how there are disparities in quality of education throughout states which leads to significantly different outcomes in the college and career search process. It then explains that this problem sources from inconsistency in state education policy. There are also differences in student outcomes due to race and place of living.**
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-## Glimpse of data
+    **This article relates to our research question because it examines student success from a location perspective, but also includes disparities looking at factors like race. For example, Massachusetts and Minnesota students being 3x more likely to be proficient in math than West Virginia and Mississippi students is a discovery that we might expand upon in our to answer our research question.**\
+    \
+    Glimpse of data
 
 ```{r}
 #| label: load-data-2
@@ -92,25 +122,43 @@ edustats <- read.csv("data/edustats.csv")
 
 -   Identify the source of the data.
 
+    **This data was collected by Walt Hickey of FiveThirtyEight.**
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    **This poll was collected by Walt Hickey via a poll run through SurveyMonkeyAudience. It was given to 1,186 respondents from June 3 to June 6.**
+
 -   Write a brief description of the observations.
+
+    **The observations are different people that took the survey, or respondents.**
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+    **One research question that we have for this dataset is: How does a respondent\'s opinion of different Star Wars films and their demographic information impact how favorably they view different characters?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
+    **Research will focus on finding trends on the views of characters, reading through public opinion, figuring out how much money was spent per film, and analyzing Star Wars opinions through other demographic factors. We hypothesize that younger people will favor the more recent films and the characters most prevalently seen in these films.**
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
+
+    **Categorical variables include respondent ID, name of films, whether or not respondent was a fan, whether or not a film was seen or not, the rank of the film, which character was shot first, gender, age, education, household income and location.**
 
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    <https://www.rollingstone.com/tv-movies/tv-movie-lists/50-best-star-wars-characters-of-all-time-145533/>
+
 -   Provide a one paragraph summary about the article.
 
+    **The article is about the appeal of the Star Wars franchise across a vast audience. The author notes that even minor characters in the original trilogy led to significant interest in the series and a desire to know more about their stories and origins. The article presents a ranking of the top 50 best characters from the Star Wars films including prequels, sequels, and spin-offs. The author emphasizes that the list includes characters from the most recent films, as well as classic characters from the original trilogy.**
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+    **Our research question builds off of this article because if a respondent favors certain films over others, they will likely favor certain characters over others based on the film. This article gives us background on the different star wars characters and why viewers may like some over others.**
 
 ## Glimpse of data
 
