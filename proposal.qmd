@@ -12,7 +12,7 @@ editor: visual
 library(tidyverse)
 ```
 
-# Data 1 --\> Winter Olympic Medals.csv
+# Data 1 --\> WinterOlympic
 
 ## Introduction and data
 
@@ -49,10 +49,10 @@ The data was collected five years ago and was taken from sports-reference.com. T
 ```{r}
 #| label: load-data-1
 
-edustats <- read.csv("data/edustats.csv")
+WinterOlympic <- read.csv("data/Winter Olympic Medals.csv")
 ```
 
-# Data 2
+# Data 2 -\> Edustats
 
 ## Introduction and data
 
@@ -83,10 +83,10 @@ edustats <- read.csv("data/edustats.csv")
 ```{r}
 #| label: load-data-2
 
-week7starwars <- read.csv("data/week7_starwars.csv", check.name = F)
+edustats <- read.csv("data/edustats.csv")
 ```
 
-# Data 3
+# Data 3 -\> week7starwars
 
 ## Introduction and data
 
@@ -117,5 +117,5 @@ week7starwars <- read.csv("data/week7_starwars.csv", check.name = F)
 ```{r}
 #| label: load-data-3
 
-WinterOlympic <- read.csv("data/Winter Olympic Medals.csv")
+week7starwars <- read.csv("data/week7_starwars.csv", check.name = F)
 ```
