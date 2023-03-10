@@ -18,14 +18,14 @@
     "href": "proposal.html",
     "title": "Project title",
     "section": "",
-    "text": "library(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.2.2\n\n\nWarning: package 'tidyr' was built under R version 4.2.2\n\n\nWarning: package 'readr' was built under R version 4.2.2\n\n\nWarning: package 'purrr' was built under R version 4.2.2"
+    "text": "library(tidyverse)"
   },
   {
     "objectID": "proposal.html#introduction-and-data",
     "href": "proposal.html#introduction-and-data",
     "title": "Project title",
     "section": "Introduction and data",
-    "text": "Introduction and data\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
+    "text": "Introduction and data\n\nIdentify the source of the data.\nThe source of the data is sports-reference.com\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\n\nThe data was collected five years ago and was taken from sports-reference.com. This was initially made into an original visualization that was then further adapted into the current dataset.\n\nWrite a brief description of the observations.\nThe observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more."
   },
   {
     "objectID": "proposal.html#research-question",
@@ -46,7 +46,7 @@
     "href": "proposal.html#glimpse-of-data",
     "title": "Project title",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\n# add code here"
+    "text": "Glimpse of data\n\nedustats <- read.csv(\"data/edustats.csv\")"
   },
   {
     "objectID": "proposal.html#introduction-and-data-1",
@@ -74,7 +74,7 @@
     "href": "proposal.html#glimpse-of-data-1",
     "title": "Project title",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\n# add code here"
+    "text": "Glimpse of data\n\nweek7starwars <- read.csv(\"data/week7_starwars.csv\", check.name = F)"
   },
   {
     "objectID": "proposal.html#introduction-and-data-2",
@@ -102,7 +102,7 @@
     "href": "proposal.html#glimpse-of-data-2",
     "title": "Project title",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\n# add code here"
+    "text": "Glimpse of data\n\nWinterOlympic <- read.csv(\"data/Winter Olympic Medals.csv\")"
   },
   {
     "objectID": "report.html",

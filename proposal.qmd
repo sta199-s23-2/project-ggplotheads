@@ -26,9 +26,7 @@ The data was collected five years ago and was taken from sports-reference.com. T
 
 -   Write a brief description of the observations.
 
-    The observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more. 
-
-    \
+    The observations display an overview of every athlete who has won a medal at the Winter Olympics. The observations include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more. \
 
 ## Research question
 
@@ -51,7 +49,7 @@ The data was collected five years ago and was taken from sports-reference.com. T
 ```{r}
 #| label: load-data-1
 
-# add code here
+edustats <- read.csv("data/edustats.csv")
 ```
 
 # Data 2
@@ -85,7 +83,7 @@ The data was collected five years ago and was taken from sports-reference.com. T
 ```{r}
 #| label: load-data-2
 
-# add code here
+week7starwars <- read.csv("data/week7_starwars.csv", check.name = F)
 ```
 
 # Data 3
@@ -119,5 +117,5 @@ The data was collected five years ago and was taken from sports-reference.com. T
 ```{r}
 #| label: load-data-3
 
-# add code here
+WinterOlympic <- read.csv("data/Winter Olympic Medals.csv")
 ```
