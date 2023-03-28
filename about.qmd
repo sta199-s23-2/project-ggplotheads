@@ -4,10 +4,10 @@ format: html
 editor: visual
 ---
 
-This project was developed by **\[team name\]** For [STA 199: Introduction to Data Science](https://sta199-s23-2.github.io/) at Duke University. The team is comprised of the following team members.
+This project was developed by the ggplotheads for [STA 199: Introduction to Data Science](https://sta199-s23-2.github.io/) at Duke University. The team is comprised of the following team members.
 
 -   Sydney Fox: A sophomore public policy major from Jupiter, Florida.
--   Noah Hirsfield: A sophomore biology major from Woodcliff Lake, NJ.
+-   Noah Hirshfield: A sophomore biology major from Woodcliff Lake, NJ.
 -   Lindsay Gross: A sophomore public policy major from South Orange, NJ.
 -   Ben Yacht: A sophomore neuroscience major from Plainview, NY.
 -   Jake Marrs: A sophomore public policy major from Wellesley, MA.
