@@ -50,7 +50,7 @@ library(tidyverse)
 
 -   Provide a one paragraph summary about the article.
 
-    **This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR\'s collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.**
+    **This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR's collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.**
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -136,7 +136,7 @@ edustats <- read.csv("data/edustats.csv")
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-    **One research question that we have for this dataset is: How does a respondent\'s opinion of different Star Wars films and their demographic information impact how favorably they view different characters?**
+    **One research question that we have for this dataset is: How does a respondent's opinion of different Star Wars films and their demographic information impact how favorably they view different characters?**
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
