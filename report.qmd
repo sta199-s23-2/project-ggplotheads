@@ -15,7 +15,7 @@ The observations represent every athlete who has won a medal at the Winter Olymp
 
 **Methodology:**
 
-Our research question is \"What are the factors that influence Winter Olympic success across countries, events and year it took place in?\"
+Our research question is "What are the factors that influence Winter Olympic success across countries, events and year it took place in?"
 
 Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through interference and not prediction, since we are analyzing past data that is concrete. Therefore, we do not need to predict outcomes of data since we are just inferring patterns and trends based on existing data. We plan to gather results from our data by creating visuals comparing/contrasting factors such as gender, age, Olympic event and more to see which factors affected Olympic winter success. 
 
@@ -25,42 +25,34 @@ The variables represented are all categorical variables: countries, athletes, ev
 
 **Adding Additional Variables**
 
-**Results** 
+**Results**
 
 **Coding Ideas**
 
-What is the relationship between age and medals won in specific Winter Olympics events? 
-Demonstrate using a visualization.
+What is the relationship between age and medals won in specific Winter Olympics events? Demonstrate using a visualization.
 
 ```{r}
 #| label: Create-Visualization
 ```
-Process: 
-1. Group the Winter Olympic events into similar categories (skating, skiing/snowboarding, team events, track events)
-2. Filter out team events because there is no age variable
-3. Created faceted bar plot with grouped events. 
 
+Process: 1. Group the Winter Olympic events into similar categories (skating, skiing/snowboarding, team events, track events) 2. Filter out team events because there is no age variable 3. Created faceted bar plot with grouped events.
 
-What is the relationship between age and quantity of medals won in the Winter Olympics? 
-Demonstrate using a visualization. 
+Do men and women from from the same countries have similar success in Olympic Events?
 
 ```{r}
 #| label: Create-Visualization-2
 
 ```
-Process: 
-1. 
-2. 
-3. 
 
-Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a skiing event? 
+Process: 1. Filter out mixed events 2. Some sort of groupby for event 3. Bar graph, each bar is different country and stack separating color by gender (blue and pink?)
+
+Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a skiing event?
+
 ```{r}
 #| label: Calculate-Probability
 ```
-Process: 
-1. 
-2. 
-3. 
+
+Process: 1. 2. 3.
 
 \
 
