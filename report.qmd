@@ -15,4 +15,9 @@ The observations represent every athlete who has won a medal at the Winter Olymp
 
 **Methodology:**
 
-Our research question is \"What are the factors that influence Winter Olympic success across countries, events and year it took place in?\"\
+Our research question is \"What are the factors that influence Winter Olympic success across countries, events and year it took place in?\"
+
+Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through interference and not prediction, since we are analyzing past data that is concrete. Therefore, we do not need to predict outcomes of data since we are just inferring patterns and trends based on existing data. We plan to gather results from our data by creating visuals comparing/contrasting factors such as gender, age, Olympic event and more to see which factors affected Olympic winter success. 
+
+\
+\
