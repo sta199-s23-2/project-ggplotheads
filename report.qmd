@@ -31,6 +31,7 @@ The variables represented are all categorical variables: countries, athletes, ev
 
 What is the relationship between age and medals won in specific Winter Olympics events? 
 Demonstrate using a visualization.
+
 ```{r}
 #| label: Create-Visualization
 ```
@@ -38,6 +39,28 @@ Process:
 1. Group the Winter Olympic events into similar categories (skating, skiing/snowboarding, team events, track events)
 2. Filter out team events because there is no age variable
 3. Created faceted bar plot with grouped events. 
+
+
+What is the relationship between age and quantity of medals won in the Winter Olympics? 
+Demonstrate using a visualization. 
+
+```{r}
+#| label: Create-Visualization-2
+
+```
+Process: 
+1. 
+2. 
+3. 
+
+Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a skiing event? 
+```{r}
+#| label: Calculate-Probability
+```
+Process: 
+1. 
+2. 
+3. 
 
 \
 
