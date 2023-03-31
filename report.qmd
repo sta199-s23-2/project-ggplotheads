@@ -7,6 +7,12 @@ execute:
   echo: true
 ---
 
-**Introduction and Data** The data comes from sports-reference.com. The data was collected five years and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. Randi also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
+**Introduction and Data:**
+
+The data comes from sports-reference.com. The data was collected five years and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. Randi also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
 
 The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the type of event the medal was won in, the type of medal won, the country the Olympian was playing for, the gender of the Olympian, and the name of the Olympian.
+
+**Methodology:**
+
+Our research question is \"What are the factors that influence Winter Olympic success across countries, events and year it took place in?\"\
