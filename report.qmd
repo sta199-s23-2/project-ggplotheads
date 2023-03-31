@@ -19,5 +19,11 @@ Our research question is \"What are the factors that influence Winter Olympic su
 
 Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through interference and not prediction, since we are analyzing past data that is concrete. Therefore, we do not need to predict outcomes of data since we are just inferring patterns and trends based on existing data. We plan to gather results from our data by creating visuals comparing/contrasting factors such as gender, age, Olympic event and more to see which factors affected Olympic winter success. 
 
+This research will identify patterns and trends in medal-winning performances across different countries, events, and time periods. We hypothesize that more cold-weathered countries, populous countries, and younger participants will achieve more wins each year in the Winter Olympics. 
+
+The variables represented are all categorical variables: countries, athletes, events, type of medals, and years.
+
+\
+
 \
 \
