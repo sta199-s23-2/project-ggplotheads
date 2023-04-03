@@ -11,7 +11,11 @@ execute:
 
 The data comes from sports-reference.com. The data was collected five years and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. Randi also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
 
-The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the type of event the medal was won in, the type of medal won, the country the Olympian was playing for, the gender of the Olympian, and the name of the Olympian.
+The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the type of event the medal was won in, the type of medal won, the country the Olympian was playing for, the gender of the Olympian, and the name of the Olympian. Therefore, the data does include both individual medal winners as well as winning teams, and also includes medalists from countries that no longer exist.
+
+A possible ethical issue with this dataset is that the Olympics page on sports-reference.com has since been removed from the website. Due to low traffic on the Olympics page, less work was done to check over the information and verify that it is all correct, and then sports-reference decided it was just better to take down the data. Because of this, a few of the names of the athletes are slightly misspelled or have extraneous characters, and the page was not updated with results from the 2018 or 2022 Winter Olympics. Despite this, the data was collected ethically, sports-reference is cited as the source of the data, and all of the Terms of Use listed on the sports-reference website appear to have been followed when the data was taken from sports-reference.com. 
+
+\
 
 **Methodology:**
 
