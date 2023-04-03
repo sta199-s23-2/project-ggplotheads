@@ -91,9 +91,16 @@ Scandinavia |>
   mutate(prob = n / nrow(Scandinavia)) |>
   filter(category == "Nordic")
 
-
+WinterOlympic |>
+  count(category) |>
+  mutate(prob = n / nrow(WinterOlympic)) |>
+  filter(category == "Nordic")
 
 ```
+
+The probability that a medal won by a Scandinavian athlete was in a Nordic event is 0.644.
+
+The probability that any medal won in the Winter Olympics was from a Nordic event is 0.326.
 
 Process: 1. 2. 3.
 
