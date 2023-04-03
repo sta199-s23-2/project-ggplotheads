@@ -64,7 +64,7 @@ What is the relationship between age and medals won in specific Winter Olympics 
 #| label: Create-Visualization
 ```
 
-Process: 1. Group the Winter Olympic events into similar categories (skating, skiing/snowboarding, team events, track events) 2. Filter out team events because there is no age variable 3. Created faceted bar plot with grouped events.
+Process: 1. Group the Winter Olympic events into similar categories (ice events, skiing/snowboarding events, Nordic events) 2. Filter out team events because there is no age variable 3. Created faceted bar plot with grouped events.
 
 What is the relationship between age and quantity of medals won in the Winter Olympics? Demonstrate using a visualization.
 
@@ -75,10 +75,24 @@ What is the relationship between age and quantity of medals won in the Winter Ol
 
 Process: 1. 2. 3.
 
-Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a skiing event?
+Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a Nordic event, as these originated in Scandinavia?
 
 ```{r}
 #| label: Calculate-Probability
+
+Scandinavia <- WinterOlympic |>
+  filter(Country == "Norway" | 
+         Country == "Sweden" | 
+         Country == "Denmark" | 
+         Country == "Finland")
+
+Scandinavia |>
+  count(category) |>
+  mutate(prob = n / nrow(Scandinavia)) |>
+  filter(category == "Nordic")
+
+
+
 ```
 
 Process: 1. 2. 3.
