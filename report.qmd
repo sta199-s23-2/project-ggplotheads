@@ -29,6 +29,31 @@ The variables represented are all categorical variables: countries, athletes, ev
 
 **Adding Additional Variables**
 
+```{r}
+#|: category
+
+WinterOlympic <- WinterOlympic |>
+  mutate(category = case_when(str_detect(Sport, "Alpine Skiing") ~ "Skiing/Snowboarding", 
+                              str_detect(Sport, "Biathlon") ~ "Nordic", 
+                              str_detect(Sport, "Bobsled") ~ "Ice", 
+                              str_detect(Sport, "Cross-Country Skiing") ~ "Nordic",
+                              str_detect(Sport, "Curling") ~ "Ice", 
+                              str_detect(Sport, "Figure Skating") ~ "Ice", 
+                              str_detect(Sport, "Freestyle Skiing") ~ "Skiing/Snowboarding",
+                              str_detect(Sport, "Ice Hockey") ~ "Ice", 
+                              str_detect(Sport, "Luge") ~ "Ice", 
+                              str_detect(Sport, "Nordic Combined") ~ "Nordic", 
+                              str_detect(Sport, "Short-Track Speedskating") ~ "Ice", 
+                              str_detect(Sport, "Skeleton") ~ "Ice", 
+                              str_detect(Sport, "Ski Jumping") ~ "Nordic", 
+                              str_detect(Sport, "Snowboarding") ~ "Skiing/Snowboarding", 
+                              str_detect(Sport, "Speedskating") ~ "Ice"))
+
+WinterOlympic |>
+  count(category)
+
+```
+
 **Results**
 
 **Coding Ideas**
