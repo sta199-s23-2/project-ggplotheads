@@ -7,6 +7,16 @@ execute:
   echo: true
 ---
 
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+```{r}
+WinterOlympic = read_csv("data/Winter Olympic Medals.csv")
+
+```
+
 **Introduction and Data:**
 
 The data comes from sports-reference.com. The data was collected five years and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. Randi also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
