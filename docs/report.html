@@ -235,6 +235,10 @@ dbl (3): Year, Medal Rank, Age of Athlete
 <p>Sports-reference.com states that their core purpose is to “democratize data” so that users can better understand the sports that they care about. The site was first launched with Baseball-reference.com in 2000, Pro-Football-Reference.com in 2000, and Basketball-Reference.com in 2004. Sean Forman, the current president of the company that runs Sports-reference.com, Sports Reference LLC, formed Sports Reference, Inc.&nbsp;in October 2004 and the three separate websites aforementioned combined to create Sports Reference LLC in 2007 (About Sports Reference, 2023).</p>
 <p>Using this data set, our research question is “What are the factors that influence Winter Olympic success across countries, events and year of event?” A few hypotheses that we have developed are that the colder on average and more populated countries will achieve more wins each year in the Winter Olympics. It is likely that younger athletes will also have more individual success. Also, we predict that across years, Scandinavian countries will have greater success (as measured by gold medals obtained) in Nordic sports over all other sports in the Winter Olympics. (Note to TA: These hypotheses will further develop as we further refine the specific questions that we want to ask).</p>
 <p>https://www.sports-reference.com/about.html</p>
+<p><strong>Literature Review:</strong></p>
+<p><a href="https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data"><strong>https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-dat</strong></a><strong>a</strong></p>
+<p>This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR’s collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.</p>
+<p>Our research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and events.</p>
 <p><strong>Methodology:</strong></p>
 <p>Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through trend identification which can be used for predicting outcomes in future Olympics. We plan to gather results from our data by creating visuals comparing factors such as gender, age, Olympic event and more to see which most greatly affected Olympic winter success. These visuals will include histograms, scatter plots, and box plots to answer specific questions (depending on the nature of the variable in question). The variables represented, with the exception of age, are all categorical variables: countries, athletes, events, type of medals, and years.</p>
 <p><strong>Adding Additional Variables</strong></p>
@@ -287,33 +291,64 @@ dbl (3): Year, Medal Rank, Age of Athlete
 </div>
 </div>
 <p>It appears that there is no relation between medal earned and how old the athlete is. It appears that there are likely other factors that contribute to whether an athlete wins a bronze, silver or gold medal. A box plot was used to show this data since one categorical variable is being compared to one continuous variable.</p>
-<p>What is the relationship between age and quantity of medals won in the Winter Olympics? Demonstrate using a visualization.</p>
+<p>What is the relationship between age and quantity of medals won in the Winter Olympics across different sports? Demonstrate using a visualization.</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Medal =</span> <span class="fu">fct_relevel</span>(Medal, <span class="st">"bronze"</span>, <span class="st">"silver"</span>, <span class="st">"gold"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Age of Athlete</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ggplot</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> Medal, <span class="at">y =</span> <span class="st">`</span><span class="at">Age of Athlete</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="st">"category"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship between Winter Olympic Success and Age"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Medal Earned"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Age of Athlete"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/Create-Visualization-2-1.png" class="img-fluid" width="672"></p>
 </div>
-<p>Process: 1. 2. 3.</p>
-<p>Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a Nordic event, as these originated in Scandinavia?</p>
+</div>
+<p>This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events.</p>
+<p><strong>Does the year of the Winter Olympics affect how old the participants are?</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Scandinavia <span class="ot">&lt;-</span> WinterOlympic <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Norway"</span> <span class="sc">|</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         Country <span class="sc">==</span> <span class="st">"Sweden"</span> <span class="sc">|</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>         Country <span class="sc">==</span> <span class="st">"Denmark"</span> <span class="sc">|</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>         Country <span class="sc">==</span> <span class="st">"Finland"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>Scandinavia <span class="sc">|&gt;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(Scandinavia)) <span class="sc">|&gt;</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Nordic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>AgeOlympic <span class="ot">&lt;-</span> WinterOlympic <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Age of Athlete</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year_Classification =</span> <span class="fu">if_else</span>(Year <span class="sc">&gt;</span> <span class="dv">1970</span>, <span class="st">"Recent Olympics"</span>, <span class="st">"Older Olympics"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year_Classification) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Age of Athlete</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>It is seen that the average age of a medal-winning Winter Olympic athlete is nearly identical in Winter Olympics less than and greater than 50 years ago.</p>
+<p><strong>Is average Olympian age affected by gender?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>AgeGenderOlympic <span class="ot">&lt;-</span> WinterOlympic <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Age of Athlete</span><span class="st">`</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        (Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Men"</span>, <span class="st">"Women"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Gender) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Age of Athlete</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Winter Olympic receiving men appear to be on average 1 year older than women.</p>
+<p>Given that a participant was from a Scandinavian country and they won a gold medal, what is the probability that this was in a Nordic event, as these originated in Scandinavia?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Scandinavia <span class="ot">&lt;-</span> WinterOlympic <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"Norway"</span> <span class="sc">|</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         Country <span class="sc">==</span> <span class="st">"Sweden"</span> <span class="sc">|</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>         Country <span class="sc">==</span> <span class="st">"Denmark"</span> <span class="sc">|</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>         Country <span class="sc">==</span> <span class="st">"Finland"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Medal Rank</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>Scandinavia <span class="sc">|&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(Scandinavia)) <span class="sc">|&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Nordic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   category     n  prob
   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;
-1 Nordic     409 0.644</code></pre>
+1 Nordic     143 0.681</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(WinterOlympic)) <span class="sc">|&gt;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Nordic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(WinterOlympic)) <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Nordic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   category     n  prob
@@ -321,11 +356,8 @@ dbl (3): Year, Medal Rank, Age of Athlete
 1 Nordic     933 0.326</code></pre>
 </div>
 </div>
-<p>The probability that a medal won by a Scandinavian athlete was in a Nordic event is 0.644.</p>
-<p>The probability that any medal won in the Winter Olympics was from a Nordic event is 0.326.</p>
-<p>Process: 1. 2. 3.</p>
-<p><br>
-</p>
+<p>The probability that a gold medal won by a Scandinavian athlete was in a Nordic event is 0.681.</p>
+<p>The probability that a gold medal was won in the Winter Olympics in a Nordic event by an athlete from any country is 0.326.</p>
 <p><br>
 <br>
 </p>

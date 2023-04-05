@@ -31,6 +31,14 @@ Using this data set, our research question is "What are the factors that influen
 
 https://www.sports-reference.com/about.html
 
+**Literature Review:**
+
+[**https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-dat**](https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data)**a**
+
+This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and is an ongoing trend. The article also explains how China has been close to the amount of medals received throughout time. It also explains how before the USSR's collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.
+
+Our research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and events.
+
 **Methodology:**
 
 Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through trend identification which can be used for predicting outcomes in future Olympics. We plan to gather results from our data by creating visuals comparing factors such as gender, age, Olympic event and more to see which most greatly affected Olympic winter success. These visuals will include histograms, scatter plots, and box plots to answer specific questions (depending on the nature of the variable in question). The variables represented, with the exception of age, are all categorical variables: countries, athletes, events, type of medals, and years.
