@@ -158,7 +158,7 @@ WinterOlympic |>
 
 The probability that a gold medal won by a Scandinavian athlete was in a Nordic event is 0.681.
 
-The probability that a gold medal won in the Winter Olympics by an athlete from any country was in a Nordic event is 0.326.
+The probability that a gold medal was won in the Winter Olympics in a Nordic event by an athlete from any country is 0.326.
 
 \
 \
