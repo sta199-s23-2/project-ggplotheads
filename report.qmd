@@ -88,16 +88,51 @@ WinterOlympic |>
 
 It appears that there is no relation between medal earned and how old the athlete is. It appears that there are likely other factors that contribute to whether an athlete wins a bronze, silver or gold medal. A box plot was used to show this data since one categorical variable is being compared to one continuous variable.
 
-What is the relationship between age and quantity of medals won in the Winter Olympics? Demonstrate using a visualization.
+What is the relationship between age and quantity of medals won in the Winter Olympics across different sports? Demonstrate using a visualization.
 
 ```{r}
 #| label: Create-Visualization-2
 
+WinterOlympic |>
+  mutate(Medal = fct_relevel(Medal, "bronze", "silver", "gold")) |>
+  filter(!is.na(`Age of Athlete`)) |>
+   ggplot(
+    aes(x = Medal, y = `Age of Athlete`)) +
+    geom_boxplot(show.legend = FALSE) + 
+    facet_wrap("category", ncol = 3) +
+    labs(title = "Relationship between Winter Olympic Success and Age",
+         x = "Medal Earned",
+         y = "Age of Athlete") 
+
 ```
 
-Process: 1. 2. 3.
+This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events.
 
-Given that a participant was from a Scandinavian country, what is the probability that they won a gold, silver, or bronze medal in a Nordic event, as these originated in Scandinavia?
+**Does the year of the Winter Olympics affect how old the participants are?**
+
+```{r}
+AgeOlympic <- WinterOlympic |>
+  filter(!is.na(`Age of Athlete`)) |>
+  mutate(Year_Classification = if_else(Year > 1970, "Recent Olympics", "Older Olympics")) |>
+  group_by(Year_Classification) |>
+  summarise(mean_age = mean(`Age of Athlete`))
+```
+
+It is seen that the average age of a medal-winning Winter Olympic athlete is nearly identical in Winter Olympics less than and greater than 50 years ago.
+
+**Is average Olympian age affected by gender?**
+
+```{r}
+AgeGenderOlympic <- WinterOlympic |>
+  filter(!is.na(`Age of Athlete`),
+        (Gender %in% c("Men", "Women"))) |>
+  group_by(Gender) |>
+  summarise(mean_age = mean(`Age of Athlete`))
+```
+
+Winter Olympic receiving men appear to be on average 1 year older than women.
+
+Given that a participant was from a Scandinavian country and they won a gold medal, what is the probability that this was in a Nordic event, as these originated in Scandinavia?
 
 ```{r}
 #| label: Calculate-Probability
@@ -106,7 +141,8 @@ Scandinavia <- WinterOlympic |>
   filter(Country == "Norway" | 
          Country == "Sweden" | 
          Country == "Denmark" | 
-         Country == "Finland")
+         Country == "Finland",
+         `Medal Rank` == 1)
 
 Scandinavia |>
   count(category) |>
@@ -120,13 +156,9 @@ WinterOlympic |>
 
 ```
 
-The probability that a medal won by a Scandinavian athlete was in a Nordic event is 0.644.
+The probability that a gold medal won by a Scandinavian athlete was in a Nordic event is 0.681.
 
-The probability that any medal won in the Winter Olympics was from a Nordic event is 0.326.
-
-Process: 1. 2. 3.
-
-\
+The probability that a gold medal won in the Winter Olympics by an athlete from any country was in a Nordic event is 0.326.
 
 \
 \
