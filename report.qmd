@@ -130,7 +130,7 @@ AgeOlympic
 
 It is seen that the average age of a medal-winning Winter Olympic athlete is nearly identical in Winter Olympics less than and greater than 50 years ago.
 
-**Is average Olympian age affected by gender?**
+**Is average Olympian medal winner age affected by gender?**
 
 ```{r}
 AgeGenderOlympic <- WinterOlympic |>
@@ -138,9 +138,11 @@ AgeGenderOlympic <- WinterOlympic |>
         (Gender %in% c("Men", "Women"))) |>
   group_by(Gender) |>
   summarise(mean_age = mean(`Age of Athlete`))
+
+AgeGenderOlympic
 ```
 
-Winter Olympic receiving men appear to be on average 1 year older than women.
+Winter Olympic medal receiving men appear to be on average 1 year older than women.
 
 Given that a participant was from a Scandinavian country and they won a gold medal, what is the probability that this was in a Nordic event, as these originated in Scandinavia?
 
@@ -172,3 +174,32 @@ The probability that a gold medal was won in the Winter Olympics in a Nordic eve
 
 \
 \
+**What is the true mean age of gold medal winning Olympians?**
+
+```{r}
+#| label: set_boot
+
+set.seed(1924)
+
+Gold <- WinterOlympic |>
+  filter(Medal == "gold") |>
+  filter(!is.na(`Age of Athlete`))
+
+boot <- Gold |>
+  specify(response = `Age of Athlete`) |>
+  generate(reps = 5000, type = "bootstrap") |>
+  calculate(stat = "mean")
+```
+
+```{r}
+#| label: confidence
+
+set.seed(1924)
+
+boot |>
+  summarize(lower = quantile(stat, 0.005),
+            upper = quantile(stat, 0.995))
+
+```
+
+We are 99% confident the true mean age of gold medal winning winter Olympic athletes is between 24.67079 and 25.43389 years old.
