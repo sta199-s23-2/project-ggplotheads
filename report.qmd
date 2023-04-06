@@ -124,6 +124,8 @@ AgeOlympic <- WinterOlympic |>
   mutate(Year_Classification = if_else(Year > 1970, "Recent Olympics", "Older Olympics")) |>
   group_by(Year_Classification) |>
   summarise(mean_age = mean(`Age of Athlete`))
+
+AgeOlympic
 ```
 
 It is seen that the average age of a medal-winning Winter Olympic athlete is nearly identical in Winter Olympics less than and greater than 50 years ago.
