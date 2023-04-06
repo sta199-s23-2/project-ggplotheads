@@ -72,8 +72,6 @@ WinterOlympic |>
 
 **Results**
 
-**Coding Ideas**
-
 What is the relationship between age and medals won in individual Winter Olympics events? Demonstrate using a visualization.
 
 ```{r}
@@ -197,9 +195,21 @@ boot <- Gold |>
 set.seed(1924)
 
 boot |>
-  summarize(lower = quantile(stat, 0.005),
-            upper = quantile(stat, 0.995))
+  summarize(lower = quantile(stat, 0.05),
+            upper = quantile(stat, 0.95))
 
 ```
 
-We are 99% confident the true mean age of gold medal winning winter Olympic athletes is between 24.67079 and 25.43389 years old.
+We are 90% confident the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old.
+
+```{r}
+#| label: boot-plot
+
+boot |>
+  ggplot(
+    aes(x = stat)) + 
+  geom_histogram() + 
+  geom_vline(xintercept = c(24.80165 , 25.29201)) + 
+  labs(title = "90% Confidence Interval",
+       subtitle = "True mean age of Gold Medal Winners")
+```
