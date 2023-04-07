@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "Winter Olympics: Analyzing Medal Winning Athletes"
 subtitle: "Report"
 format: html
 editor: visual
@@ -216,7 +216,7 @@ boot |>
 
 Question: Are Nordic or U.S. skiers winning more medals in skiing events in the Winter Olympics?
 
-Create a linear model to describe the relationship between the age of a Nordic Olympian and the number of medals won in a skiing event. 
+Create a linear model to describe the relationship between the age of a Nordic Olympian and the number of medals won in a skiing event.
 
 ```{r}
 #| label: wrangle-the-data
@@ -230,7 +230,6 @@ Nordic <- WinterOlympic |>
 count(Nordic)
 ```
 
-
 ```{r}
 #| label: Create-linear-regression-Nordic
 
@@ -242,7 +241,7 @@ tidy()
   
 ```
 
-Create a linear model to describe the relationship between the age of a U.S. Olympian and the number of medals won in a skiing event. 
+Create a linear model to describe the relationship between the age of a U.S. Olympian and the number of medals won in a skiing event.
 
 ```{r}
 #| label: wrangle-data-for-US
@@ -261,6 +260,7 @@ AgeOlympian
 
 
 ```
+
 ```{r}
 #| label: count-US-medal
 WinterOlympic |>
@@ -276,4 +276,3 @@ linear_reg() |>
 
 tidy()
 ```
-
