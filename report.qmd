@@ -221,17 +221,22 @@ Create a linear model to describe the relationship between the age of a Nordic O
 ```{r}
 #| label: wrangle-the-data
 
-WinterOlympic |>
-  count(Medal)
+Nordic <- WinterOlympic |>
+  filter(Country == "Norway" | 
+         Country == "Sweden" | 
+         Country == "Denmark" | 
+         Country == "Finland")
+
+count(Nordic)
 ```
+
 
 ```{r}
 #| label: Create-linear-regression-Nordic
 
 linear_reg() |>
   set_engine("lm") |>
-  fit(Medal ~ age, data = WinterOlympic) |>
-  tidy()
+  fit()
   
 ```
 
@@ -243,8 +248,15 @@ US <- WinterOlympic |>
   filter(Country == "United States")
 
 
-US |>
-  amount_of_medals 
+
+  AgeOlympian <- US |>
+  filter(!is.na(`Age of Athlete`)) |>
+  mutate(Age_Classification = if_else(Age > 30, "Old Olympian", "Young Olympian")) |>
+  group_by(Age_Classification) 
+
+AgeOlympian
+
+
 
 ```
 ```{r}
