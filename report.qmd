@@ -220,6 +220,9 @@ Create a linear model to describe the relationship between the age of a Nordic O
 
 ```{r}
 #| label: wrangle-the-data
+
+WinterOlympic |>
+  count(Medal)
 ```
 
 ```{r}
@@ -235,7 +238,19 @@ linear_reg() |>
 Create a linear model to describe the relationship between the age of a U.S. Olympian and the number of medals won in a skiing event. 
 
 ```{r}
-#| label: wrangle-data
+#| label: wrangle-data-for-US
+US <- WinterOlympic |>
+  filter(Country == "United States")
+
+
+US |>
+  amount_of_medals 
+
+```
+```{r}
+#| label: count-US-medal
+WinterOlympic |>
+  count(Medal)
 ```
 
 ```{r}
