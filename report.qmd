@@ -276,17 +276,3 @@ linear_reg() |>
 
 tidy()
 ```
-
-```{r}
-
-
-  
-WinterOlympic |>
-  filter(Country %in% c("United States", "Russia", "China", "Norway", "Netherlands", "Finland"),
-         Sport == "Speedskating") |>
-  ggplot(aes(x = Year, fill = Country)) +
-  geom_density(alpha = 0.4) +
-  labs(title = "Olympic peedskating success by country \n throughout years")
-  
-```
-
