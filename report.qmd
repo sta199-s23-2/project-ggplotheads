@@ -237,6 +237,8 @@ count(Nordic)
 linear_reg() |>
   set_engine("lm") |>
   fit()
+
+tidy()
   
 ```
 
@@ -268,6 +270,10 @@ WinterOlympic |>
 ```{r}
 #| label: Create-linear-regression-US
 
-linear_reg()
+linear_reg() |> 
+  set_engine("lm") |> 
+  fit() 
+
+tidy()
 ```
 
