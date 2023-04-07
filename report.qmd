@@ -223,9 +223,12 @@ Create a linear model to describe the relationship between the age of a Nordic O
 ```
 
 ```{r}
-#| label: Create-linear-regression
+#| label: Create-linear-regression-Nordic
 
-linear_reg()  
+linear_reg() |>
+  set_engine("lm") |>
+  fit(Medal ~ age, data = WinterOlympic) |>
+  tidy()
   
 ```
 
@@ -236,7 +239,7 @@ Create a linear model to describe the relationship between the age of a U.S. Oly
 ```
 
 ```{r}
-#| label: Create-linear-regression
+#| label: Create-linear-regression-US
 
 linear_reg()
 ```
