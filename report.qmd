@@ -286,3 +286,12 @@ WinterOlympic |>
    labs(title = "Olympic speedskating success by country \n throughout years")
 ```
 
+```{r}
+#| label: linear-reg-age-years
+
+linear_reg() |>
+  set_engine("lm") |>
+  fit(`Age of Athlete` ~ Year, data = Gold) |>
+  tidy()
+```
+For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger, they are mostly the same age.
