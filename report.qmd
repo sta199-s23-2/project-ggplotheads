@@ -213,3 +213,29 @@ boot |>
   labs(title = "90% Confidence Interval",
        subtitle = "True mean age of Gold Medal Winners")
 ```
+
+Create a linear model to describe the relationship between the age of a Nordic Olympian and the number of medals won in a skiing event. 
+
+```{r}
+#| label: wrangle-the-data
+```
+
+```{r}
+#| label: Create-linear-regression
+
+linear_reg()  
+  
+```
+
+Create a linear model to describe the relationship between the age of a U.S. Olympian and the number of medals won in a skiing event. 
+
+```{r}
+#| label: wrangle-data
+```
+
+```{r}
+#| label: Create-linear-regression
+
+linear_reg()
+```
+
