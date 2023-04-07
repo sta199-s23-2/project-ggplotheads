@@ -214,6 +214,8 @@ boot |>
        subtitle = "True mean age of Gold Medal Winners")
 ```
 
+Question: Are Nordic or U.S. skiers winning more medals in skiing events in the Winter Olympics?
+
 Create a linear model to describe the relationship between the age of a Nordic Olympian and the number of medals won in a skiing event. 
 
 ```{r}
