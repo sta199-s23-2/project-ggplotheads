@@ -1,6 +1,6 @@
 ---
-title: "Project title"
-subtitle: "Report"
+title: "GGplotheads Project on Winter Olympics"
+subtitle: "Draft"
 format: html
 editor: visual
 execute:
@@ -13,11 +13,60 @@ library(tidymodels)
 ```
 
 ```{r}
+#|Loadset
 WinterOlympic = read_csv("data/Winter Olympic Medals.csv")
 
 ```
 
+```{r}
+#|Glimpseset
+
+glimpse()
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
 **Introduction and Data:**
+
+```{r}
+
+
+```
 
 The data comes from sports-reference.com. The data was collected five years ago and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. Griffin also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
 
@@ -216,7 +265,7 @@ boot |>
 
 Question: Are Nordic or U.S. skiers winning more medals in skiing events in the Winter Olympics?
 
-Create a linear model to describe the relationship between the age of a Nordic Olympian and the number of medals won in a skiing event. 
+Create a linear model to describe the relationship between the age of a Nordic Olympian and the number of medals won in a skiing event.
 
 ```{r}
 #| label: wrangle-the-data
@@ -230,7 +279,6 @@ Nordic <- WinterOlympic |>
 count(Nordic)
 ```
 
-
 ```{r}
 #| label: Create-linear-regression-Nordic
 
@@ -242,7 +290,7 @@ tidy()
   
 ```
 
-Create a linear model to describe the relationship between the age of a U.S. Olympian and the number of medals won in a skiing event. 
+Create a linear model to describe the relationship between the age of a U.S. Olympian and the number of medals won in a skiing event.
 
 ```{r}
 #| label: wrangle-data-for-US
@@ -261,6 +309,7 @@ AgeOlympian
 
 
 ```
+
 ```{r}
 #| label: count-US-medal
 WinterOlympic |>
@@ -294,4 +343,5 @@ linear_reg() |>
   fit(`Age of Athlete` ~ Year, data = Gold) |>
   tidy()
 ```
+
 For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger, they are mostly the same age.
