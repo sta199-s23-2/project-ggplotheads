@@ -8,7 +8,7 @@ execute:
 ---
 
 ```{r}
-#|label:Loadlibraries
+#|label: Load
 library(tidyverse)
 library(tidymodels)
 ```
@@ -253,6 +253,7 @@ For every 1 year increase, we estimate a mean change of 0.009 years in age for a
 *How does the United States compare to Scandinavian countries in speedskating success?*
 
 ```{r}
+#| label: density
 WinterOlympic |>
    filter(Country %in% c("United States", "Norway", "Sweden", "Denmark", "Finland"),
           Sport == "Speedskating") |>
