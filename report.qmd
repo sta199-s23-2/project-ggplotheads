@@ -122,7 +122,7 @@ WinterOlympic |>
 
 This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events.
 
-Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?
+*Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?*
 
 ```{r}
 #| label: Mean age with year 
@@ -238,6 +238,8 @@ boot |>
        subtitle = "True mean age of Gold Medal Winners")
 ```
 
+*How does Winter Olympic age change with each successive year?*
+
 ```{r}
 #| label: linear-reg-age-years
 linear_reg() |>
@@ -246,14 +248,24 @@ linear_reg() |>
   tidy()
 ```
 
-For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger, they are mostly the same age.
+For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age.
+
+*How does the United States compare to Scandinavian countries in speedskating success?*
 
 ```{r}
 WinterOlympic |>
-  mutate(Russia = if_else(, "Recent Olympics", "Older Olympics"))
-   filter(Country %in% c("United States", "Russia", "China", "Norway", "Netherlands", "Finland"),
+   filter(Country %in% c("United States", "Norway", "Sweden", "Denmark", "Finland"),
           Sport == "Speedskating") |>
    ggplot(aes(x = Year, fill = Country)) +
    geom_density(alpha = 0.4) +
    labs(title = "Olympic speedskating success by country \n throughout years")
 ```
+This density graph shows that the United States has become more successful in this event in recent years. However, in the early Olympic years, Finland had the most success in this event and since dropped off. 
+
+**Results**
+
+Our initial testing in this draft centered around the relationship between Winter Olympic success and age. The prime age for athletes to win medals was around 25 years old, and these results remained relatively consistent throughout gender and time. When looking at medal winners both over 50 years ago and within the last 50 years, the mean age of athletes is very similar. Before 1970, the mean age was 24.95 years old and in the last 50 years, the mean age was 25.22 years old. A bootstrap done to find the true mean age of all medal winners confirmed that we are 90% certain that the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old. Both the values from the last 50 years and before the last 50 years fall within this confidence interval.
+
+In comparing the ages of athletes who won each type of medal, there was no relation between the age of the athlete and the type of medal they are winning. For gold, silver, and bronze medals, there are very similar distributions in the ages of the athletes.
+
+In addition, an athlete's home country can play a role in the sport that they win the medal in. For example, there is a 33% probability that a random medal won at the Winter Olympics is from a Nordic event, such as ski jumping or biathlon. However, if an athlete comes from a Scandinavian country, there is a 68% probability that their medal came from a Nordic event. Therefore, an athlete's place of birth can also determine their success in certain events.
