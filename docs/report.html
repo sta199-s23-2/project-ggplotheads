@@ -407,8 +407,12 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 <p>The p-value is 0. This is likely not exactly 0, but rather a value that is so small that it is rounded to 0 in this format.</p>
 <p>This means that there is a probability of 0 that there is a difference of 0.89543 years in the average age of medalists between genders given that the mean age of medalists is equal for men and women.</p>
 <p>For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis (that the average age of male and females are equal), and have strong evidence to support the alternative hypothesis.</p>
+<<<<<<< HEAD
 <p><em>Do American men, on average, have greater overall success than American females in Winter Olympics?</em></p>
 <p>We hypothesize that men, overage, will have more success than American females in Winter Olympics.</p>
+=======
+<p><em>Do American men, on average, win more gold medals than American females in Winter Olympics?</em></p>
+>>>>>>> 7921db8483d3a0a0ce28fafba8f9da0cbef722fb
 <p>Null hypotheis: <span class="math inline">\(\mu_m = \mu_f\)</span> Alternative Hypothesis: <span class="math inline">\(\mu_m &gt; \mu_f\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>OlympicGender <span class="ot">&lt;-</span> WinterOlympic <span class="sc">|&gt;</span></span>
@@ -441,7 +445,11 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
+<<<<<<< HEAD
 1   0.674</code></pre>
+=======
+1   0.736</code></pre>
+>>>>>>> 7921db8483d3a0a0ce28fafba8f9da0cbef722fb
 </div>
 </div>
 <p>This p-value is 0.676 which means that given the null hypothesis is true (the mean medal rank for men and women in the United States is equal), there is a 0.676 chance that the alternative hypothesis is true. Therefore, given an <span class="math inline">\(\alpha\)</span> = 0.05, this null hypothesis cannot be rejected.</p>
@@ -457,7 +465,11 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>Scandinavia <span class="sc">|&gt;</span></span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(Scandinavia)) <span class="sc">|&gt;</span></span>
+<<<<<<< HEAD
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Nordic"</span>, <span class="st">"Ice"</span>, <span class="st">"Skiing/Snowboarding"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Nordic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> 7921db8483d3a0a0ce28fafba8f9da0cbef722fb
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   category                n   prob
@@ -466,6 +478,7 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 2 Nordic                143 0.681 
 3 Skiing/Snowboarding    18 0.0857</code></pre>
 </div>
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>Othercountries <span class="ot">&lt;-</span> WinterOlympic <span class="sc">|&gt;</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Medal Rank</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span>) </span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -473,6 +486,13 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(Othercountries)) <span class="sc">|&gt;</span></span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Nordic"</span>, <span class="st">"Ice"</span>, <span class="st">"Skiing/Snowboarding"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Medal Rank</span><span class="st">`</span> <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">|&gt;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">nrow</span>(WinterOlympic)) <span class="sc">|&gt;</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Nordic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> 7921db8483d3a0a0ce28fafba8f9da0cbef722fb
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   category                n  prob
