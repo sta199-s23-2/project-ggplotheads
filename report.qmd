@@ -92,11 +92,15 @@ WinterOlympic |>
   mutate(Medal = fct_relevel(Medal, "bronze", "silver", "gold")) |>
   filter(!is.na(`Age of Athlete`)) |>
    ggplot(
-    aes(x = Medal, y = `Age of Athlete`)) +
+    aes(x = Medal, y = `Age of Athlete`, fill = Medal)) +
     geom_boxplot(show.legend = FALSE) + 
     labs(title = "Relationship between Winter Olympic Success and Age",
          x = "Medal Earned",
-         y = "Age of Athlete") 
+         y = "Age of Athlete") +
+  theme_minimal() +
+  scale_fill_manual(values = c("bronze" = "#cd7f32", 
+                               "silver" = "#C0C0C0", 
+                               "gold" = "#ffd700"))
 
 ```
 
@@ -111,12 +115,16 @@ WinterOlympic |>
   mutate(Medal = fct_relevel(Medal, "bronze", "silver", "gold")) |>
   filter(!is.na(`Age of Athlete`)) |>
    ggplot(
-    aes(x = Medal, y = `Age of Athlete`)) +
+    aes(x = Medal, y = `Age of Athlete`, fill = Medal)) +
     geom_boxplot(show.legend = FALSE) + 
     facet_wrap("category", ncol = 3) +
     labs(title = "Relationship between Winter Olympic Success and Age",
          x = "Medal Earned",
-         y = "Age of Athlete") 
+         y = "Age of Athlete") +
+   theme_minimal() +
+  scale_fill_manual(values = c("bronze" = "#cd7f32", 
+                               "silver" = "#C0C0C0", 
+                               "gold" = "#ffd700"))
 
 ```
 
@@ -274,10 +282,11 @@ We are 90% confident the true mean age of gold medal winning winter Olympic athl
 boot |>
   ggplot(
     aes(x = stat)) + 
-  geom_histogram() + 
+  geom_histogram(fill = "gold", color = "black", binwidth = 0.1) + 
   geom_vline(xintercept = c(24.80165 , 25.29201)) + 
   labs(title = "90% Confidence Interval",
-       subtitle = "True mean age of Gold Medal Winners")
+       subtitle = "True mean age of Gold Medal Winners") +
+  theme_minimal()
 ```
 
 *How does Winter Olympic age change with each successive year?*
