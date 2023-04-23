@@ -157,6 +157,7 @@ $\mu_m = \mu_f$
 The mean age of male medalists is equal to the mean age of female medalists. 
 
 Alterantive Hypothesis:
+
 $\mu_m > \mu_f$
 
 The mean age of male medalists is greater than the mean age of female medalists.
@@ -204,8 +205,13 @@ For a significance value of 0.05, our p-value is less than the significance valu
 
 *Do American men, on average, win more gold medals than American females in Winter Olympics?*
 
-Null hypotheis: $\mu_m = \mu_f$
-Alternative Hypothesis: $\mu_m > \mu_f$
+Null hypotheis: 
+
+$\mu_m = \mu_f$
+
+Alternative Hypothesis: 
+
+$\mu_m > \mu_f$
 
 
 ```{r}
