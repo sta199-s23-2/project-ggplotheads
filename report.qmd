@@ -202,7 +202,9 @@ This means that there is a probability of 0 that there is a difference of 0.8954
 For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis (that the average age of male and females are equal), and have strong evidence to support the alternative hypothesis.
 
 
-*Do American men, on average, win more gold medals than American females in Winter Olympics?*
+*Do American men, on average, have greater overall success than American females in Winter Olympics?*
+
+We hypothesize that men, overage, will have more success than American females in Winter Olympics. 
 
 Null hypotheis: $\mu_m = \mu_f$
 Alternative Hypothesis: $\mu_m > \mu_f$
@@ -254,13 +256,15 @@ Scandinavia <- WinterOlympic |>
 Scandinavia |>
   count(category) |>
   mutate(prob = n / nrow(Scandinavia)) |>
-  filter(category == "Nordic")
+  filter(category %in% c("Nordic", "Ice", "Skiing/Snowboarding"))
 
-WinterOlympic |>
-  filter(`Medal Rank` == 1) |>
+Othercountries <- WinterOlympic |>
+  filter(`Medal Rank` == 1) 
+
+Othercountries |>
   count(category) |>
-  mutate(prob = n / nrow(WinterOlympic)) |>
-  filter(category == "Nordic")
+  mutate(prob = n / nrow(Othercountries)) |>
+  filter(category %in% c("Nordic", "Ice", "Skiing/Snowboarding"))
 
 ```
 
