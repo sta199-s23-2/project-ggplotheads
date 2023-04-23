@@ -30,7 +30,7 @@ glimpse(WinterOlympic)
 
 The data comes from sports-reference.com. The data was collected five years ago and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University (Olympic History, 2018). Griffin also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
 
-The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the sport of the won medal, the event the medal was won in, the type of medal won, the country the Olympian was playing for, the gender of the Olympian, and the name of the Olympian. Therefore, the data includes both individual medal winners as well as winning teams, and also includes medalists from countries that no longer exist.
+The observations represent every athlete who has won a medal at the Winter Olympics. The original dataset has 2865 observations. The dataset has nine values: Year, Sport, Event, Country, Gender, Medal Rank, Medal, Name of Athlete or Team, and Age of Athlete. Therefore, the data includes both individual medal winners as well as winning teams, and also includes medalists from countries that no longer exist.
 
 A possible issue with this dataset is that the Olympics page on sports-reference.com has since been removed from the website. Due to low traffic on the Olympics page, less work was done to check over the information and verify that it is all correct. Sports-reference subsequently decided it was better to take down the data set. Because of this, a few of the names of the athletes are slightly misspelled or have extraneous characters, and the page was not updated with results from the 2018 or 2022 Winter Olympics. Despite this, the data was collected ethically, sports-reference is cited as the source of the data, and all of the terms of use listed on the sports-reference website appear to have been followed when the data was taken from sports-reference.com.
 
@@ -139,25 +139,66 @@ It is seen that the average age of a medal-winning Winter Olympic athlete is nea
 
 *Is average Olympian medal winner age affected by gender?*
 
+We hypothesize that the mean age of medal winning male athletes is greater than the mean age of female medalists.
+
+Null Hypothesis:
+
+$\mu_m = \mu_f$
+
+The mean age of male medalists is equal to the mean age of female medalists. 
+
+Alterantive Hypothesis:
+
+The mean age of male medalists is greater than the mean age of female medalists.
+
+
+
 ```{r}
 #| label: Mean age with gender 
 AgeGenderOlympic <- WinterOlympic |>
   filter(!is.na(`Age of Athlete`),
-        (Gender %in% c("Men", "Women"))) |>
+        (Gender %in% c("Men", "Women"))) 
+
+AgeGenderOlympic|>
   group_by(Gender) |>
   summarise(mean_age = mean(`Age of Athlete`))
 
-AgeGenderOlympic
+
+obs_stat <- 25.52113 - 24.62570
+
+obs_stat
 ```
 
-Winter Olympic medal receiving men appear to be on average 1 year older than women.
+$\bar{x}$ = 0.89543
 
-*Do men, on average, win more gold medals than females in Winter Olympics?*
+
+```{r}
+#| label: diff in means
+
+null_dist <- AgeGenderOlympic |>
+  specify(response = `Age of Athlete`, explanatory = Gender) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in means", order = c("Men", "Women"))
+
+null_dist |>
+  get_p_value(obs_stat = 0.89543, direction = "two sided")
+```
+
+The p-value is 0. This is likely not exactly 0, but rather a value that is so small that it is rounded to 0 in this format. 
+
+This means that there is a probability of 0 that there is a difference of 0.89543 years in the average age of medalists between genders given that the mean age of medalists is equal for men and women.
+
+For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis, and have strong evidence to support the alternative hypothesis.
+
+
+*Do American men, on average, win more gold medals than American females in Winter Olympics?*
 
 ```{r}
 #| label: Gender success
 
 OlympicGender <- WinterOlympic |>
+  filter(Country == "United States") |>
   filter(Gender %in% c("Men", "Women")) |>
   group_by(Gender) |>
   summarise(mean_medal = mean(`Medal Rank`))
@@ -186,6 +227,7 @@ Scandinavia |>
   filter(category == "Nordic")
 
 WinterOlympic |>
+  filter(`Medal Rank` == 1) |>
   count(category) |>
   mutate(prob = n / nrow(WinterOlympic)) |>
   filter(category == "Nordic")
@@ -194,8 +236,8 @@ WinterOlympic |>
 
 The probability that a gold medal won by a Scandinavian athlete was in a Nordic event is 0.681.
 
-The probability that a gold medal was won in the Winter Olympics in a Nordic event by an athlete from any country is 0.326.\
-\
+The probability that a gold medal was won in the Winter Olympics in a Nordic event by an athlete from any country is 0.109.
+
 *What is the true mean age of gold medal winning Olympians?*
 
 ```{r}
