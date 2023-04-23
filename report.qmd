@@ -153,9 +153,11 @@ Null Hypothesis:
 
 $\mu_m = \mu_f$
 
+
 The mean age of male medalists is equal to the mean age of female medalists. 
 
 Alterantive Hypothesis:
+$\mu_m > \mu_f$
 
 The mean age of male medalists is greater than the mean age of female medalists.
 
@@ -197,10 +199,14 @@ The p-value is 0. This is likely not exactly 0, but rather a value that is so sm
 
 This means that there is a probability of 0 that there is a difference of 0.89543 years in the average age of medalists between genders given that the mean age of medalists is equal for men and women.
 
-For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis, and have strong evidence to support the alternative hypothesis.
+For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis (that the average age of male and females are equal), and have strong evidence to support the alternative hypothesis.
 
 
 *Do American men, on average, win more gold medals than American females in Winter Olympics?*
+
+Null hypotheis: $\mu_m = \mu_f$
+Alternative Hypothesis: $\mu_m > \mu_f$
+
 
 ```{r}
 #| label: Gender success
@@ -208,14 +214,30 @@ For a significance value of 0.05, our p-value is less than the significance valu
 OlympicGender <- WinterOlympic |>
   filter(Country == "United States") |>
   filter(Gender %in% c("Men", "Women")) |>
-  group_by(Gender) |>
-  summarise(mean_medal = mean(`Medal Rank`))
+  group_by(Gender)
 
-OlympicGender
+OlympicGender |>
+  summarise(mean = mean(`Medal Rank`))
 
 ```
 
 It appears that men and women are nearly identical in their success in the Winter Olympics, as measured by average medal won. This shows that the average medal received in the Winter Olympics across all years was silver in both genders. This is because the value is almost exactly 2, which corresponds to silver.
+
+```{r}
+#| label: diff_in_means_gender
+
+obs_stat <- 1.929032 - 1.956897
+null_dist <- OlympicGender |>
+  specify(response = `Medal Rank`, explanatory = Gender) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in means", order = c("Men", "Women"))
+
+null_dist |>
+  get_p_value(obs_stat = -.027865 , direction = "two sided")
+
+```
+This p-value is 0.676 which means that given the null hypothesis is true (the mean medal rank for men and women in the United States is equal), there is a 0.676 chance that the alternative hypothesis is true. Therefore, given an $\alpha$ = 0.05, this null hypothesis cannot be rejected.  
 
 *Given that a participant was from a Scandinavian country and they won a gold medal, what is the probability that this was in a Nordic event, as these originated in Scandinavia?*
 
@@ -301,7 +323,10 @@ linear_reg() |>
 
 For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age.
 
+$\widehat{Athlete\_Age} = 5.963 - 0.0096*Year$
+
 *How does the United States compare to Scandinavian countries in speedskating success?*
+
 
 ```{r}
 #| label: density
