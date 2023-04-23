@@ -128,7 +128,7 @@ WinterOlympic |>
 
 ```
 
-This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events. There appears to be an outlier with a medal earned in a Nordic event by an Olympian who was younger than 20. There are also outliers with some participants above 40 years old winning medals in ice and nordic events. 
+This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events. There appears to be an outlier with a medal earned in a Nordic event by an Olympian who was younger than 20. There are also outliers with some participants above 40 years old winning medals in ice and nordic events.
 
 *Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?*
 
@@ -312,7 +312,8 @@ WinterOlympic |>
    geom_density(alpha = 0.4) +
    labs(title = "Olympic speedskating success by country \n throughout years")
 ```
-This density graph shows that the United States has become more successful in this event in recent years. However, in the early Olympic years, Finland had the most success in this event and since dropped off. Olympians from Norway and Sweden have had the least success in speedskaing in recent years. 
+
+This density graph shows that the United States has become more successful in this event in recent years. However, in the early Olympic years, Finland had the most success in this event and since dropped off. Olympians from Norway and Sweden have had the least success in speedskaing in recent years.
 
 **Results**
 
