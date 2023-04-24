@@ -359,3 +359,8 @@ Our initial testing in this draft centered around the relationship between Winte
 In comparing the ages of athletes who won each type of medal, there was no relation between the age of the athlete and the type of medal they are winning. For gold, silver, and bronze medals, there are very similar distributions in the ages of the athletes.
 
 In addition, an athlete's home country can play a role in the sport that they win the medal in. For example, there is a 33% probability that a random medal won at the Winter Olympics is from a Nordic event, such as ski jumping or biathlon. However, if an athlete comes from a Scandinavian country, there is a 68% probability that their medal came from a Nordic event. Therefore, an athlete's place of birth can also determine their success in certain events.
+
+Work Cited
+Rogers, Simon. “Olympic Medal Winners: Every One since 1896 as Open Data.” The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data. 
+
+“List of Winter Olympic Sports.” Topend Sports, https://www.topendsports.com/events/winter/sports/index.htm#:~:text=Winter%20Olympic%20Sports%20for%202022&text=The%2015%20sport%20disciplines%20of,more%20specific%20events%2C%20as%20listed. 
