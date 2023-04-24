@@ -62,6 +62,7 @@ library(tidyverse)
 #| label: load-data-1
 
 WinterOlympic <- read.csv("data/Winter Olympic Medals.csv")
+glimpse(WinterOlympic)
 ```
 
 # Data 2 -\> Edustats
