@@ -223,6 +223,8 @@ OlympicGender |>
 
 ```
 
+$\bar{x}$ = -0.027865
+
 It appears that men and women are nearly identical in their success in the Winter Olympics, as measured by average medal won. This shows that the average medal received in the Winter Olympics across all years was silver in both genders. This is because the value is almost exactly 2, which corresponds to silver.
 
 ```{r}
