@@ -200,9 +200,9 @@ For a significance value of 0.05, our p-value is less than the significance valu
 
 *Do American men, on average, have greater overall success than American females in Winter Olympics?*
 
-We hypothesize that men, overage, will have more success than American females in Winter Olympics.
+We hypothesize that men, on average, will have more success than American females in Winter Olympics.
 
-Null hypotheis:
+Null hypothesis:
 
 $\mu_m = \mu_f$
 
