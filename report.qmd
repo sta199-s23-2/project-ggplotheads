@@ -52,7 +52,7 @@ Our research question is different from the article that we cited because the ar
 
 **Methodology:**
 
-Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through trend identification which can be used for predicting outcomes in future Olympics. We plan to gather results from our data by creating visualizations comparing factors such as gender, age, Olympic event and more to see which most greatly affects Olympic winter success. These visuals will include histograms, scatter plots, and box plots to answer specific questions (depending on the nature of the variable in question). The variables represented, with the exception of age, are all categorical variables: countries, athletes, events, type of medals, and years.
+Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through trend identification. We plan to gather results from our data by creating visualizations comparing factors such as gender, age, Olympic event and more to see which most greatly affects Olympic winter success. These visuals will include histograms, scatter plots, and box plots to answer specific questions (depending on the nature of the variable in question). The variables represented, with the exception of age, are all categorical variables: countries, athletes, events, type of medals, and years.
 
 **Adding Additional Variables**
 
@@ -104,7 +104,7 @@ WinterOlympic |>
 
 ```
 
-It appears that there is no relationship between medal earned and how old the athlete is. It appears that there are likely other factors that contribute to whether an athlete wins a bronze, silver or gold medal. A box plot was used to show this data since one categorical variable is being compared to one continuous variable. It appears that in all 3 medal categories (bronze, silver, and gold), the median age of the athlete who won the medal was approximately 25 years old. Ages of athletes who won bronze medals ranged from approximately 13 to 37 years old with a few outliers who were about 38, 40, and 41 years old. Ages of athletes who won silver medals ranged from approximately 15 to 37 years old with outliers at 38, 39, 41, and 42 years old. Ages of athletes who won gold medals ranged from approximately 15 to 36 years old with outliers at 39 and 40 years old. It appears that athletes across all 3 categories had similar ranges of ages and the same median. We can infer from this visualization that the relationship between Winter Olympic success and age is similar for athletes who won bronze, silver, and gold medals. 
+It appears that there is no relationship between medal earned and how old the athlete is. It appears that there are likely other factors that contribute to whether an athlete wins a bronze, silver or gold medal. A box plot was used to show this data since one categorical variable is being compared to one continuous variable. It appears that in all 3 medal categories (bronze, silver, and gold), the median age of the athlete who won the medal was approximately 25 years old. Ages of athletes who won bronze medals ranged from approximately 13 to 37 years old with a few outliers who were about 38, 40, and 41 years old. Ages of athletes who won silver medals ranged from approximately 15 to 37 years old with outliers at 38, 39, 41, and 42 years old. Ages of athletes who won gold medals ranged from approximately 15 to 36 years old with outliers at 39 and 40 years old. It appears that athletes across all 3 categories had similar ranges of ages and the same median. We can infer from this visualization that the relationship between Winter Olympic success and age is similar for athletes who won bronze, silver, and gold medals.
 
 *What is the relationship between age and quantity of medals won in the Winter Olympics across different sports categories?*
 
@@ -128,7 +128,7 @@ WinterOlympic |>
 
 ```
 
-This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events. There appears to be an outlier with a medal earned in a Nordic event by an Olympian who was younger than 20. There are also outliers with some participants above 40 years old winning medals in ice and nordic events. The median age of athletes for ice events was the same across all 3 categories of medals (bronze, silver, and gold) and was approximately 24 years old. The median age of athletes for skiing and snowboarding events was also the same across all 3 categories of medals and was approximately 24 years old. The median age of athletes for nordic events was higher than ice and skiing events and ranged from approximately 26 to 27 years old. It appears that athletes who won silver and gold medals in nordic events had a median of about 1 year older than athletes who won bronze medals. Additionally, in nordic and skiing/snowboarding events, the range of ages of athletes who won gold medals were generally smaller than the range of ages for athletes who won silver and bronze medals. We can infer that athletes are more likely to win a gold medal in these events when they are within a shorter age range. Athletes in nordic and ice events had the highest range of ages for bronze medals, showing that athletes in these events were less likely to be within a certain age range in order to win a bronze medal.  
+This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events. There appears to be an outlier with a medal earned in a Nordic event by an Olympian who was younger than 20. There are also outliers with some participants above 40 years old winning medals in ice and nordic events. The median age of athletes for ice events was the same across all 3 categories of medals (bronze, silver, and gold) and was approximately 24 years old. The median age of athletes for skiing and snowboarding events was also the same across all 3 categories of medals and was approximately 24 years old. The median age of athletes for nordic events was higher than ice and skiing events and ranged from approximately 26 to 27 years old. It appears that athletes who won silver and gold medals in nordic events had a median of about 1 year older than athletes who won bronze medals. Additionally, in nordic and skiing/snowboarding events, the range of ages of athletes who won gold medals were generally smaller than the range of ages for athletes who won silver and bronze medals. We can infer that athletes are more likely to win a gold medal in these events when they are within a shorter age range. Athletes in nordic and ice events had the highest range of ages for bronze medals, showing that athletes in these events were less likely to be within a certain age range in order to win a bronze medal.
 
 *Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?*
 
@@ -153,16 +153,13 @@ Null Hypothesis:
 
 $\mu_m = \mu_f$
 
+The mean age of male medalists is equal to the mean age of female medalists.
 
-The mean age of male medalists is equal to the mean age of female medalists. 
+Alternative Hypothesis:
 
-Alterantive Hypothesis:
+$\mu_m \neq \mu_f$
 
-$\mu_m > \mu_f$
-
-The mean age of male medalists is greater than the mean age of female medalists.
-
-
+The mean age of male medalists is not equal to the mean age of female medalists.
 
 ```{r}
 #| label: Mean age with gender 
@@ -182,10 +179,9 @@ obs_stat
 
 $\bar{x}$ = 0.89543
 
-
 ```{r}
 #| label: diff in means
-
+set.seed(8)
 null_dist <- AgeGenderOlympic |>
   specify(response = `Age of Athlete`, explanatory = Gender) |>
   hypothesize(null = "independence") |>
@@ -196,25 +192,23 @@ null_dist |>
   get_p_value(obs_stat = 0.89543, direction = "two sided")
 ```
 
-The p-value is 0. This is likely not exactly 0, but rather a value that is so small that it is rounded to 0 in this format. 
+The p-value is 0. This is likely not exactly 0, but rather a value that is so small that it is rounded to 0 in this format.
 
 This means that there is a probability of 0 that there is a difference of 0.89543 years in the average age of medalists between genders given that the mean age of medalists is equal for men and women.
 
 For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis (that the average age of male and females are equal), and have strong evidence to support the alternative hypothesis.
 
-
 *Do American men, on average, have greater overall success than American females in Winter Olympics?*
 
-We hypothesize that men, overage, will have more success than American females in Winter Olympics. 
+We hypothesize that men, overage, will have more success than American females in Winter Olympics.
 
-Null hypotheis: 
+Null hypotheis:
 
 $\mu_m = \mu_f$
 
-Alternative Hypothesis: 
+Alternative Hypothesis:
 
-$\mu_m > \mu_f$
-
+$\mu_m \neq \mu_f$
 
 ```{r}
 #| label: Gender success
@@ -233,7 +227,7 @@ It appears that men and women are nearly identical in their success in the Winte
 
 ```{r}
 #| label: diff_in_means_gender
-
+set.seed(8)
 obs_stat <- 1.929032 - 1.956897
 null_dist <- OlympicGender |>
   specify(response = `Medal Rank`, explanatory = Gender) |>
@@ -245,7 +239,8 @@ null_dist |>
   get_p_value(obs_stat = -.027865 , direction = "two sided")
 
 ```
-This p-value is 0.676 which means that given the null hypothesis is true (the mean medal rank for men and women in the United States is equal), there is a 0.676 chance that the alternative hypothesis is true. Therefore, given an $\alpha$ = 0.05, this null hypothesis cannot be rejected.  
+
+This p-value is 0.71 which means that given the null hypothesis is true (the mean medal rank for men and women in the United States is equal), there is a 0.71 chance that the alternative hypothesis is true. Therefore, given an $\alpha$ = 0.71, this null hypothesis cannot be rejected.
 
 *Given that a participant was from a Scandinavian country and they won a gold medal, what is the probability that this was in a Nordic event, as these originated in Scandinavia?*
 
@@ -317,7 +312,8 @@ boot |>
   geom_histogram(fill = "gold", color = "black", binwidth = 0.1) + 
   geom_vline(xintercept = c(24.80165 , 25.29201)) + 
   labs(title = "90% Confidence Interval",
-       subtitle = "True mean age of Gold Medal Winners") +
+       subtitle = "True mean age of Gold Medal Winners",
+       x = "Age (Years)") +
   theme_minimal()
 ```
 
@@ -331,12 +327,11 @@ linear_reg() |>
   tidy()
 ```
 
-For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age. Therefore, this data  suggests that the age of the medalists has not influenced success over time.
+For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age. Therefore, this data suggests that the age of the medalists has not influenced success over time.
 
-$\widehat{Athlete\_Age} = 5.963 - 0.0096*Year$
+$\widehat{Athlete\_Age} = 5.963 + 0.0096*Year$
 
 *How does the United States compare to Scandinavian countries in speedskating success?*
-
 
 ```{r}
 #| label: density
@@ -352,7 +347,7 @@ This density graph shows that the United States has become more successful in th
 
 **Results**
 
-Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes name's have extraneous characters. Moving forward, we could reevaluate our data to ensure that there are no missing values (add in values for 2018 and 2022 Olympics) and no misspellings so that we can be confident with our results since we will be confident with the validity of our data. 
+Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes name's have extraneous characters. Moving forward, we could reevaluate our data to ensure that there are no missing values (add in values for 2018 and 2022 Olympics) and no misspellings so that we can be confident with our results since we will be confident with the validity of our data.
 
 Our initial testing in this draft centered around the relationship between Winter Olympic success and age. The prime age for athletes to win medals was around 25 years old, and these results remained relatively consistent throughout gender and time. When looking at medal winners both over 50 years ago and within the last 50 years, the mean age of athletes is very similar. Before 1970, the mean age was 24.95 years old and in the last 50 years, the mean age was 25.22 years old. A bootstrap done to find the true mean age of all medal winners confirmed that we are 90% certain that the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old. Both the values from the last 50 years and before the last 50 years fall within this confidence interval.
 
@@ -360,7 +355,6 @@ In comparing the ages of athletes who won each type of medal, there was no relat
 
 In addition, an athlete's home country can play a role in the sport that they win the medal in. For example, there is a 33% probability that a random medal won at the Winter Olympics is from a Nordic event, such as ski jumping or biathlon. However, if an athlete comes from a Scandinavian country, there is a 68% probability that their medal came from a Nordic event. Therefore, an athlete's place of birth can also determine their success in certain events.
 
-Work Cited
-Rogers, Simon. “Olympic Medal Winners: Every One since 1896 as Open Data.” The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data. 
+Work Cited Rogers, Simon. "Olympic Medal Winners: Every One since 1896 as Open Data." The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data.
 
-“List of Winter Olympic Sports.” Topend Sports, https://www.topendsports.com/events/winter/sports/index.htm#:~:text=Winter%20Olympic%20Sports%20for%202022&text=The%2015%20sport%20disciplines%20of,more%20specific%20events%2C%20as%20listed. 
+"List of Winter Olympic Sports." Topend Sports, https://www.topendsports.com/events/winter/sports/index.htm#:\~:text=Winter%20Olympic%20Sports%20for%202022&text=The%2015%20sport%20disciplines%20of,more%20specific%20events%2C%20as%20listed.
