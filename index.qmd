@@ -1,6 +1,6 @@
 ---
-title: "TEAM NAME"
-subtitle: "STA 199 Project"
+title: "ggplotheads"
+subtitle: "Winter Olympics Data Analysis"
 format: html
 editor: visual
 ---
