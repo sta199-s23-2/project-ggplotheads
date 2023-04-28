@@ -28,31 +28,25 @@ glimpse(WinterOlympic)
 
 **Introduction and Data:**
 
-The data comes from sports-reference.com. The data was collected five years ago and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University (Olympic History, 2018). Griffin also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
+The data comes from Sports Reference. The data was collected five years ago and was scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University$^1$. Griffin also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This was initially made into a visualization that was then further adapted to the current data set.
 
 The observations represent every athlete who has won a medal at the Winter Olympics. The original dataset has 2865 observations. The dataset has nine values: Year, Sport, Event, Country, Gender, Medal Rank, Medal, Name of Athlete or Team, and Age of Athlete. Therefore, the data includes both individual medal winners as well as winning teams, and also includes medalists from countries that no longer exist.
 
-A possible issue with this dataset is that the Olympics page on Sports Reference has since been removed from the website. Due to low traffic on the Olympics page, less work was done to check over the information and verify that it is all correct. Sports Reference subsequently decided it was better to take down the data set. Because of this, a few of the names of the athletes are slightly misspelled or have extraneous characters, and the page was not updated with results from the 2018 or 2022 Winter Olympics. Despite this, the data was collected ethically, Sports Reference is cited as the source of the data, and all of the terms of use listed on the Sports Reference website appear to have been followed when the data was taken from Sports Reference.
+A possible issue with this dataset is that the Olympics page on Sports Reference has since been removed from the website. Due to low traffic on the Olympics page, less work was done to check over the information and verify that it is all correct. Sports Reference subsequently decided it was better to take down the data set. Because of this, a few of the names of the athletes are slightly misspelled or have extraneous characters, and the page was not updated with results from the 2018 or 2022 Winter Olympics. Despite this, the data was collected ethically, Sports Reference is cited as the source of the data, and all of the terms of use listed on the Sports Reference website appear to have been followed when the data was taken.
 
-Sports Reference states that their core purpose is to "democratize data" so that users can better understand the sports that they care about. The site was first launched with Baseball-reference.com in 2000, Pro-Football-Reference.com in 2000, and Basketball-Reference.com in 2004. Sean Forman, the current president of the company that runs Sports Reference, Sports Reference LLC, formed Sports Reference, Inc. in October 2004 and the three separate websites aforementioned combined to create Sports Reference LLC in 2007 (About Sports Reference, 2023).
+Sports Reference states that their core purpose is to "democratize data" so that users can better understand the sports that they care about. The site was first launched with Baseball-reference.com in 2000, Pro-Football-Reference.com in 2000, and Basketball-Reference.com in 2004. Sean Forman, the current president of the company that runs Sports Reference, Sports Reference LLC, formed Sports Reference, Inc. in October 2004 and the three separate websites aforementioned combined to create Sports Reference LLC in 2007$^2$.
 
-Using this data set, our research question is "What are the factors that influence Winter Olympic success across countries, events and year?" A few hypotheses that we have developed are that countries located in colder regions of the world will achieve more wins each year in the Winter Olympics. It is also likely that younger athletes will have more individual success. Also, we predict that across years, Scandinavian countries will have greater success (as measured by gold medals obtained) in Nordic sports over all other sports in the Winter Olympics. (Note to TA: These hypotheses will further develop as we further refine the specific questions that we want to ask).
-
-http://www.randigriffin.com/2018/05/27/olympic-history-1-web-scraping.html
-
-https://www.sports-reference.com/about.html
+Using this data set, our research question is "To what extent does an athlete’s age, gender, and country influence their Winter Olympic success?" Success will be defined as gold medals won, average medal rank, or total number of medals won depending on the test. One hypothesis that we have developed to help answer this question is that younger athletes will have more gold medals won, on average, than older athletes. We also hypothesize that within each country, men will outperform women (receive more gold medals on average) and that the mean age of male medalists will be greater than the mean age of female medalists, Finally, we predict that countries will have greater success in events more popular to their region of the world.
 
 **Literature Review:**
 
-https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data
+This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and this is an ongoing trend. The article also explains how China has been close to the US in amount of medals received throughout time. It also explains how before the USSR's collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR $^3$.
 
-This article talks about every Olympic medal winner since 1896. It mentions how the majority of winners have been from the US and this is an ongoing trend. The article also explains how China has been close to the US in amount of medals received throughout time. It also explains how before the USSR's collapse at the end of the 1980s, the US and the USSR had similar trends. Overall, this article gives us evidence of the trends between the different countries in the Olympics, particularly the trends of the US, China, and USSR.
-
-Our research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and events.
+Our research question is different from the article that we cited because the article does not differentiate the medals won solely in the Winter Olympics, but rather the Winter and Summer Olympics. It also does not specify trends in Olympic success based on gender and event type. 
 
 **Methodology:**
 
-Our research topic focuses on analyzing the performance of athletes who have won medals at the Winter Olympics. We plan to answer this research question through trend identification. We plan to gather results from our data by creating visualizations comparing factors such as gender, age, Olympic event and more to see which most greatly affects Olympic winter success. These visuals will include histograms, scatter plots, and box plots to answer specific questions (depending on the nature of the variable in question). The variables represented, with the exception of age, are all categorical variables: countries, athletes, events, type of medals, and years.
+Our research topic focuses on analyzing the demographics of athletes who have won medals at the Winter Olympics. We plan to answer our research question through trend identification. We plan to gather results from our data by creating visualizations comparing factors such as gender, age, and Olympic event to see which most greatly affects Olympic winter success. These visuals will include histograms, scatter plots, and box plots to answer specific questions (depending on the nature of the variable in question). The variables represented, with the exception of age, are all categorical variables: countries, athletes, events, type of medals, and years.
 
 **Adding Additional Variables**
 
@@ -82,6 +76,8 @@ WinterOlympic |>
 ```
 
 **Methodology continued**
+
+****AGE****
 
 *What is the relationship between age and medals won in individual Winter Olympics events?*
 
@@ -128,7 +124,52 @@ WinterOlympic |>
 
 ```
 
-This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events. There appears to be an outlier with a medal earned in a Nordic event by an Olympian who was younger than 20. There are also outliers with some participants above 40 years old winning medals in ice and nordic events. The median age of athletes for ice events was the same across all 3 categories of medals (bronze, silver, and gold) and was approximately 24 years old. The median age of athletes for skiing and snowboarding events was also the same across all 3 categories of medals and was approximately 24 years old. The median age of athletes for nordic events was higher than ice and skiing events and ranged from approximately 26 to 27 years old. It appears that athletes who won silver and gold medals in nordic events had a median of about 1 year older than athletes who won bronze medals. Additionally, in nordic and skiing/snowboarding events, the range of ages of athletes who won gold medals were generally smaller than the range of ages for athletes who won silver and bronze medals. We can infer that athletes are more likely to win a gold medal in these events when they are within a shorter age range. Athletes in nordic and ice events had the highest range of ages for bronze medals, showing that athletes in these events were less likely to be within a certain age range in order to win a bronze medal.
+This visualization shows that when the type of Winter Olympic sport category is specified, there is a slight trend toward more success in Nordic events with athletes older in their 20s. It also appears that athletes winning medals in Nordic events are on average older than those winning medals in Ice and Skiing/Snowboarding events. There appears to be an outlier with a medal earned in a Nordic event by an Olympian who was younger than 20. There are also outliers with some participants above 40 years old winning medals in ice and nordic events. The median age of athletes for ice events was the same across all 3 categories of medals (bronze, silver, and gold) and was approximately 24 years old. The median age of athletes for skiing and snowboarding events was also the same across all 3 categories of medals and was approximately 24 years old. The median age of athletes for nordic events was higher than ice and skiing events and ranged from approximately 26 to 27 years old. It appears that athletes who won silver and gold medals in nordic events had a median of about 1 year older than athletes who won bronze medals. Additionally, in nordic and skiing/snowboarding events, the range of ages of athletes who won gold medals were generally smaller than the range of ages for athletes who won silver and bronze medals. We can infer that athletes are more likely to win a gold medal in these events when they are within a shorter age range. 
+
+Null Hypothesis:
+
+$\mu\_nordic = \mu\_other$
+
+The average age of nordic event medal winners will be equal to that of medal winners in other events. 
+
+Alternative hypothesis:
+
+$\mu\_nordic \neq \mu\_other$
+
+The average age of nordic event medal winners will not be equal to that of medal winners in other events.  
+
+```{r}
+#| label: age_hypothesis
+
+Age_hypothesis <- WinterOlympic |>
+  mutate(Sports_category = if_else(category == "Nordic", "Nordic event", "Other event")) |>
+  filter(!is.na(`Age of Athlete`)) 
+
+Age_hypothesis|>
+  group_by(Sports_category) |>
+  summarise(mean_age = mean(`Age of Athlete`))
+
+
+obs_stat <- 26.58621 - 24.47664
+
+obs_stat
+```
+
+ $\bar{x}$ = 2.10957
+```{r}
+#| label: age_p
+
+set.seed(8)
+null_dist <- Age_hypothesis |>
+  specify(response = `Age of Athlete`, explanatory = Sports_category) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in means", order = c("Nordic event", "Other event"))
+
+null_dist |>
+  get_p_value(obs_stat = 2.10957, direction = "two sided")
+```
+When using an alpha value of 0.01, a p-value of far less than 0.01 (approximately 0) was calculated. Thus, the null hypothesis of the mean age of nordic event medal winners being equal to the mean age of other event winners can be rejected and there is strong evidence to accept the alternative. Therefore, being older likely does benefit an Olympian when competing in a Nordic event. 
 
 *Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?*
 
@@ -142,8 +183,9 @@ AgeOlympic <- WinterOlympic |>
 
 AgeOlympic
 ```
-
 It is seen that the average age of a medal-winning Winter Olympic athlete is nearly identical in Winter Olympics less than and greater than 50 years ago.
+
+***Gender***
 
 *Is average Olympian medal winner age affected by gender?*
 
@@ -155,17 +197,7 @@ $\mu_m = \mu_f$
 
 The mean age of male medalists is equal to the mean age of female medalists.
 
-<<<<<<< Updated upstream
-Alternative Hypothesis:
-=======
-The mean age of male medalists is equal to the mean age of female medalists. 
-
 Alterantive Hypothesis:
-
-$\mu_m > \mu_f$
-
-The mean age of male medalists is greater than the mean age of female medalists.
->>>>>>> Stashed changes
 
 $\mu_m \neq \mu_f$
 
@@ -385,6 +417,11 @@ In comparing the ages of athletes who won each type of medal, there was no relat
 
 In addition, an athlete's home country can play a role in the sport that they win the medal in. For example, there is a 33% probability that a random medal won at the Winter Olympics is from a Nordic event, such as ski jumping or biathlon. However, if an athlete comes from a Scandinavian country, there is a 68% probability that their medal came from a Nordic event. Therefore, an athlete's place of birth can also determine their success in certain events.
 
-Work Cited Rogers, Simon. "Olympic Medal Winners: Every One since 1896 as Open Data." The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data.
+Work Cited 
+1)Griffin, Randi H. “Olympic History: Scraping Data from Sports-Reference.com.” Randigriffin.com, 27 May 2018, http://www.randigriffin.com/2018/05/27/olympic-history-1-web-scraping.html. 
+
+2)“About Sports Reference.” Sports Reference, https://www.sports-reference.com/about.html. 
+
+Rogers, Simon. "Olympic Medal Winners: Every One since 1896 as Open Data." The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data.
 
 "List of Winter Olympic Sports." Topend Sports, https://www.topendsports.com/events/winter/sports/index.htm#:\~:text=Winter%20Olympic%20Sports%20for%202022&text=The%2015%20sport%20disciplines%20of,more%20specific%20events%2C%20as%20listed.
