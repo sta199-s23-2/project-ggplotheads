@@ -335,7 +335,7 @@ OlympicGender |>
 
 $\bar{x}$ = -0.027865
 
-It appears that men and women are nearly identical in their success in the Winter Olympics, as measured by average medal won (average medal rank). This shows that the average medal received in the Winter Olympics across all years was silver in both genders. This is because the value is almost exactly 2, which corresponds to silver.
+It appears that men and women in the United States are nearly identical in their success in the Winter Olympics, as measured by average medal won (average medal rank). This shows that the average medal received in the Winter Olympics across all years was silver in both genders. This is because the value is almost exactly 2, which corresponds to silver.
 
 ```{r}
 #| label: diff_in_means_gender
@@ -496,9 +496,7 @@ This density graph shows that the United States has become more successful in sp
 
 **Results**
 
-Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes name's have extraneous characters. Moving forward, we could reevaluate our data to ensure that there are no missing values (add in values for 2018 and 2022 Olympics) and no misspellings so that we can be confident with our results since we will be confident with the validity of our data.
-
-Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes name's have extraneous characters.
+Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes' names have extraneous characters. Moving forward, first we could add in values for the 2018 and 2022 Winter Olympics to look at the history compared to the most recent results. We could also correct misspellings of athletes' names to potentially look at names in comparison to country. Lastly, we could add event-specific data such as times for timed event to compare success in other ways then medal earnings.
 
 Our initial testing in this draft centered around the relationship between Winter Olympic success and age. The prime age for athletes to win medals was around 25 years old, and these results remained relatively consistent throughout gender and time. When looking at medal winners both over 50 years ago and within the last 50 years, the mean age of athletes is very similar. Before 1970, the mean age was 24.95 years old and in the last 50 years, the mean age was 25.22 years old. A bootstrap done to find the true mean age of all medal winners confirmed that we are 90% certain that the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old. Both the values from the last 50 years and before the last 50 years fall within this confidence interval.
 
@@ -506,7 +504,11 @@ In comparing the ages of athletes who won each type of medal, there was no relat
 
 In addition, an athlete's home country can play a role in the sport that they win the medal in. For example, there is a 33% probability that a random medal won at the Winter Olympics is from a Nordic event, such as ski jumping or biathlon. However, if an athlete comes from a Scandinavian country, there is a 68% probability that their medal came from a Nordic event. Therefore, an athlete's place of birth can also determine their success in certain events.
 
-Work Cited 1)Griffin, Randi H. "Olympic History: Scraping Data from Sports-Reference.com." Randigriffin.com, 27 May 2018, http://www.randigriffin.com/2018/05/27/olympic-history-1-web-scraping.html.
+We also decided to examine disparities between genders when looking at the age and country of winning athletes. There is almost no difference in success by gender within each country. For example, men and women in the United States yielded almost exactly the same medal rank, not one gender performing better than the other. Looking at age, the mean age of winning males is slightly higher than trhat of women, but there is no overall significant difference in success by gender.
+
+Work Cited 
+
+1)Griffin, Randi H. "Olympic History: Scraping Data from Sports-Reference.com." Randigriffin.com, 27 May 2018, http://www.randigriffin.com/2018/05/27/olympic-history-1-web-scraping.html.
 
 2)"About Sports Reference." Sports Reference, https://www.sports-reference.com/about.html.
 
