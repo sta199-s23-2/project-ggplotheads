@@ -1,6 +1,7 @@
 ---
 title: "Winter Olympics Data Analysis"
 subtitle: "Report"
+echo: false
 format: html
 editor: visual
 ---

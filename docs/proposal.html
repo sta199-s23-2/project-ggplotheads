@@ -221,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>The source of the data is sports-reference.com</strong></p></li>
 <li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
 </ul>
-<p><strong>The data was collected five years ago and scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current dataset.</strong></p>
+<p><strong>The data was collected five years ago and scraped from “Sports Reference” by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current data set.</strong></p>
 <ul>
 <li><p>Write a brief description of the observations.</p>
 <p><strong>The observations represent every athlete who has won a medal at the Winter Olympics. The values in each observation include the year of the Olympics, the event the medal was won in, the type of medal won, the country they were playing for, and more.</strong></p></li>
@@ -252,7 +252,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="glimpse-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Winter Olympic Medals.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>WinterOlympic <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Winter Olympic Medals.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(WinterOlympic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 2,865
+Columns: 9
+$ Year                    &lt;int&gt; 1924, 1924, 1924, 1924, 1924, 1924, 1924, 1924…
+$ Sport                   &lt;chr&gt; "Bobsled", "Bobsled", "Bobsled", "Cross-Countr…
+$ Event                   &lt;chr&gt; "Men's Four/Five", "Men's Four/Five", "Men's F…
+$ Country                 &lt;chr&gt; "Switzerland", "Britain", "Belgium", "Norway",…
+$ Gender                  &lt;chr&gt; "Men", "Men", "Men", "Men", "Men", "Men", "Men…
+$ Medal.Rank              &lt;int&gt; 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1…
+$ Medal                   &lt;chr&gt; "gold", "silver", "bronze", "gold", "silver", …
+$ Name.of.Athlete.or.Team &lt;chr&gt; "Switzerland-1", "Britain-1", "Belgium-1", "Th…
+$ Age.of.Athlete          &lt;int&gt; NA, NA, NA, 29, 24, 28, 29, 27, 24, NA, NA, NA…</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -293,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Glimpse of data</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>edustats <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/edustats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>edustats <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/edustats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -335,7 +349,7 @@ Glimpse of data</p></li>
 <section id="glimpse-of-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>week7starwars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/week7_starwars.csv"</span>, <span class="at">check.name =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>week7starwars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/week7_starwars.csv"</span>, <span class="at">check.name =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
