@@ -75,7 +75,7 @@ WinterOlympic |>
 
 ```
 
-We used a source from Topend Sports to create the variable of Nordic Events. Nordic events include Biathalon (combining cross-country skiing and target shooting: individual, sprint, pursuit, mass start & relay events), Cross-Country Skiing (individual and team sprint, freestyle, pursuit, classical and relays), Ski Jumping and Nordic Combined (ski jumping and cross-country skiing). Winter Olympic events are divided between ice, Nordic, and skiing/snowboarding events and we made this distinction to better compare different country's success.
+We used a source from Topend Sports to create the variable of Nordic Events. Nordic events include Biathalon (combining cross-country skiing and target shooting: individual, sprint, pursuit, mass start & relay events), Cross-Country Skiing (individual and team sprint, freestyle, pursuit, classical and relays), Ski Jumping and Nordic Combined (ski jumping and cross-country skiing). Winter Olympic events are divided between ice, Nordic, and skiing/snowboarding events and we made this distinction to better compare different country's success $^4$.
 
 **Methodology continued**
 
@@ -130,13 +130,13 @@ Because we did not see a significant different in our results in the previous vi
 
 Null Hypothesis:
 
-$\mu\_nordic = \mu\_other$
+$\mu_{nordic} = \mu_{other}$
 
 The average age of nordic event medal winners will be equal to that of medal winners in other events.
 
 Alternative hypothesis:
 
-$\mu\_nordic \neq \mu\_other$
+$\mu_{nordic} \neq \mu_{other}$
 
 The average age of nordic event medal winners will not be equal to that of medal winners in other events.
 
@@ -492,9 +492,9 @@ WinterOlympic |>
    labs(title = "Olympic cross-country skiing success by country \n throughout years")
 ```
 
-This density graph shows that the United States has become more successful in speedskating and alpine skiing in recent years. However, in the early Olympic years, Finland had the most success in speedskating and since dropped off. Olympians from Norway and Sweden have had the least success in speedskaing in recent years. Additionally, Scandinavian countries have recently statrted seeing greater success in alpine skiing, but the United States was more succcessful in the past. Yet, when looking at a Nordic event like cross-country skiing it is seen that the United States does not have any documented medals received while Scandinavian countries appear to outperform in this event as compared to the other two plotted.
+This density graph shows that the United States has become more successful in speedskating and alpine skiing in recent years. However, in the early Olympic years, Finland had the most success in speedskating and since dropped off. Olympians from Norway and Sweden have had the least success in speedskating in recent years. Additionally, Scandinavian countries have recently started seeing greater success in alpine skiing, but the United States was more successful in the past. Yet, when looking at a Nordic event like cross-country skiing it is seen that the United States does not have any documented medals received while Scandinavian countries appear to outperform in this event as compared to the other two plotted.
 
-**Results**
+**Results and Discussion**
 
 Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes' names have extraneous characters. Moving forward, first we could add in values for the 2018 and 2022 Winter Olympics to look at the history compared to the most recent results. We could also correct misspellings of athletes' names to potentially look at names in comparison to country. Lastly, we could add event-specific data such as times for timed event to compare success in other ways then medal earnings.
 
@@ -506,12 +506,12 @@ In addition, an athlete's home country can play a role in the sport that they wi
 
 We also decided to examine disparities between genders when looking at the age and country of winning athletes. There is almost no difference in success by gender within each country. For example, men and women in the United States yielded almost exactly the same medal rank, not one gender performing better than the other. Looking at age, the mean age of winning males is slightly higher than trhat of women, but there is no overall significant difference in success by gender.
 
-Work Cited 
+Work Cited
 
-1)Griffin, Randi H. "Olympic History: Scraping Data from Sports-Reference.com." Randigriffin.com, 27 May 2018, http://www.randigriffin.com/2018/05/27/olympic-history-1-web-scraping.html.
+1) Griffin, Randi H. "Olympic History: Scraping Data from Sports-Reference.com." Randigriffin.com, 27 May 2018, http://www.randigriffin.com/2018/05/27/olympic-history-1-web-scraping.html.
 
-2)"About Sports Reference." Sports Reference, https://www.sports-reference.com/about.html.
+2) "About Sports Reference." Sports Reference, https://www.sports-reference.com/about.html.
 
-Rogers, Simon. "Olympic Medal Winners: Every One since 1896 as Open Data." The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data.
+3) Rogers, Simon. "Olympic Medal Winners: Every One since 1896 as Open Data." The Guardian, Guardian News and Media, 25 June 2012, https://www.theguardian.com/sport/datablog/2012/jun/25/olympic-medal-winner-list-data.
 
-"List of Winter Olympic Sports." Topend Sports, https://www.topendsports.com/events/winter/sports/index.htm#:\~:text=Winter%20Olympic%20Sports%20for%202022&text=The%2015%20sport%20disciplines%20of,more%20specific%20events%2C%20as%20listed.
+4) "List of Winter Olympic Sports." Topend Sports, https://www.topendsports.com/events/winter/sports/index.htm#:\~:text=Winter%20Olympic%20Sports%20for%202022&text=The%2015%20sport%20disciplines%20of,more%20specific%20events%2C%20as%20listed.
