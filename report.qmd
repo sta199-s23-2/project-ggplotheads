@@ -28,7 +28,7 @@ glimpse(WinterOlympic)
 
 **Introduction and Data:**
 
-The data comes from Sports Reference. The data was collected five years ago and was scraped from "Sports Reference" by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University$^1$. Griffin also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This data was initially made into a visualization that was then further adapted to the current data set.
+The data comes from Sports Reference. The data was collected five years ago and was scraped from Sports Reference by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University$^1$. Griffin also competed in the 2018 Winter Olympics on the Unified Korea women's national ice hockey team. This data was initially made into a visualization that was then further adapted to the current data set.
 
 The observations represent every athlete who has won a medal at the Winter Olympics. The original data set has 2865 observations. The dataset has nine values: Year, Sport, Event, Country, Gender, Medal Rank, Medal, Name of Athlete or Team, and Age of Athlete. Therefore, the data includes both individual medal winners as well as winning teams, and also includes medalists from countries that no longer exist.
 
@@ -76,11 +76,7 @@ WinterOlympic |>
 ```
 
 We used a source from Topend Sports to create the variable of Nordic Events. 
-Nordic events represents 
-Biathalon (combining cross-country skiing and target shooting: individual, sprint, pursuit, mass start & relay events) 
-Cross-Country Skiing (individual and team sprint, freestyle, pursuit, classical and relays)
-Ski Jumping
-Nordic Combined (ski jumping and cross-country skiing)
+Nordic events include Biathalon (combining cross-country skiing and target shooting: individual, sprint, pursuit, mass start & relay events), Cross-Country Skiing (individual and team sprint, freestyle, pursuit, classical and relays), Ski Jumping and Nordic Combined (ski jumping and cross-country skiing). Winter Olympic events are divided between ice, Nordic, and skiing/snowboarding events and we made this distinction to better compare different country's success. 
 
 **Methodology continued**
 
@@ -225,7 +221,7 @@ boot |>
 *Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?*
 
 ```{r}
-#| label: Mean age with year 
+#| label: Mean_age_with_year 
 AgeOlympic <- WinterOlympic |>
   filter(!is.na(`Age of Athlete`)) |>
   mutate(Year_Classification = if_else(Year > 1970, "Recent Olympics", "Older Olympics")) |>
@@ -275,7 +271,7 @@ $\mu_m \neq \mu_f$
 The mean age of male medalists is not equal to the mean age of female medalists.
 
 ```{r}
-#| label: Mean age with gender 
+#| label: Mean_age_with_gender 
 AgeGenderOlympic <- WinterOlympic |>
   filter(!is.na(`Age of Athlete`),
         (Gender %in% c("Men", "Women"))) 
@@ -293,7 +289,7 @@ obs_stat
 $\bar{x}$ = 0.89543
 
 ```{r}
-#| label: diff in means
+#| label: diff_in_means
 set.seed(8)
 null_dist <- AgeGenderOlympic |>
   specify(response = `Age of Athlete`, explanatory = Gender) |>
@@ -324,7 +320,7 @@ Alternative Hypothesis:
 $\mu_m \neq \mu_f$
 
 ```{r}
-#| label: Gender success
+#| label: Gender_success
 
 OlympicGender <- WinterOlympic |>
   filter(Country == "United States") |>
