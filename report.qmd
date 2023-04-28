@@ -1,10 +1,8 @@
 ---
-title: "GGplotheads Project on Winter Olympics"
-subtitle: "Draft"
+title: "Winter Olympics Data Analysis"
+subtitle: "Report"
 format: html
 editor: visual
-execute:
-  echo: true
 ---
 
 ```{r}
@@ -15,12 +13,14 @@ library(tidymodels)
 
 ```{r}
 #|label: Loadset
+#| message: false
 WinterOlympic = read_csv("data/Winter Olympic Medals.csv")
 
 ```
 
 ```{r}
 #|label: Glimpseset
+#| message: false
 
 glimpse(WinterOlympic)
 
@@ -171,6 +171,50 @@ null_dist |>
 ```
 When using an alpha value of 0.01, a p-value of far less than 0.01 (approximately 0) was calculated. Thus, the null hypothesis of the mean age of nordic event medal winners being equal to the mean age of other event winners can be rejected and there is strong evidence to accept the alternative. Therefore, being older likely does benefit an Olympian when competing in a Nordic event. 
 
+*What is the true mean age of gold medal winning Olympians?*
+
+```{r}
+#| label: set_boot
+
+set.seed(1924)
+
+Gold <- WinterOlympic |>
+  filter(Medal == "gold") |>
+  filter(!is.na(`Age of Athlete`))
+
+boot <- Gold |>
+  specify(response = `Age of Athlete`) |>
+  generate(reps = 5000, type = "bootstrap") |>
+  calculate(stat = "mean")
+```
+
+```{r}
+#| label: confidence
+
+set.seed(1924)
+
+boot |>
+  summarize(lower = quantile(stat, 0.05),
+            upper = quantile(stat, 0.95))
+
+```
+
+We are 90% confident the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old.
+
+```{r}
+#| label: boot-plot
+
+boot |>
+  ggplot(
+    aes(x = stat)) + 
+  geom_histogram(fill = "gold", color = "black", binwidth = 0.1) + 
+  geom_vline(xintercept = c(24.80165 , 25.29201)) + 
+  labs(title = "90% Confidence Interval",
+       subtitle = "True mean age of Gold Medal Winners",
+       x = "Age (Years)") +
+  theme_minimal()
+```
+
 *Does the year of the Winter Olympics (pre-1970 vs post-1970) affect how old the participants are?*
 
 ```{r}
@@ -184,6 +228,26 @@ AgeOlympic <- WinterOlympic |>
 AgeOlympic
 ```
 It is seen that the average age of a medal-winning Winter Olympic athlete is nearly identical in Winter Olympics less than and greater than 50 years ago.
+
+*How does Winter Olympic age change with each successive year?*
+
+```{r}
+#| label: linear-reg-age-years
+linear_reg() |>
+  set_engine("lm") |>
+  fit(`Age of Athlete` ~ Year, data = Gold) |>
+  tidy()
+
+linear_reg() |>
+  set_engine("lm") |>
+  fit(`Age of Athlete` ~ Year, data = Gold) |>
+  glance() |>
+  pull(AIC)
+```
+For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age. Therefore, this data suggests that the age of the medalists has not influenced success over time.
+
+$\widehat{Athlete\_Age} = 5.963 + 0.0096*Year$
+
 
 ***Gender***
 
@@ -238,7 +302,7 @@ The p-value is 0. This is likely not exactly 0, but rather a value that is so sm
 
 This means that there is a probability of 0 that there is a difference of 0.89543 years in the average age of medalists between genders given that the mean age of medalists is equal for men and women.
 
-For a significance value of 0.05, our p-value is less than the significance value. Therefore, we can reject the null hypothesis (that the average age of male and females are equal), and have strong evidence to support the alternative hypothesis.
+For a significance value of 0.01, our p-value is less than the significance value. Therefore, we can reject the null hypothesis (that the average age of male and females are equal), and have strong evidence to support the alternative hypothesis.
 
 *Do American men, on average, have greater overall success than American females in Winter Olympics?*
 
@@ -248,17 +312,7 @@ Null hypothesis:
 
 $\mu_m = \mu_f$
 
-<<<<<<< Updated upstream
-Alternative Hypothesis:
-=======
-Null hypotheis: 
-
-$\mu_m = \mu_f$
-
 Alternative Hypothesis: 
-
-$\mu_m > \mu_f$
->>>>>>> Stashed changes
 
 $\mu_m \neq \mu_f$
 
@@ -272,12 +326,11 @@ OlympicGender <- WinterOlympic |>
 
 OlympicGender |>
   summarise(mean = mean(`Medal Rank`))
-
 ```
 
 $\bar{x}$ = -0.027865
 
-It appears that men and women are nearly identical in their success in the Winter Olympics, as measured by average medal won. This shows that the average medal received in the Winter Olympics across all years was silver in both genders. This is because the value is almost exactly 2, which corresponds to silver.
+It appears that men and women are nearly identical in their success in the Winter Olympics, as measured by average medal won (average medal rank). This shows that the average medal received in the Winter Olympics across all years was silver in both genders. This is because the value is almost exactly 2, which corresponds to silver.
 
 ```{r}
 #| label: diff_in_means_gender
@@ -294,7 +347,64 @@ null_dist |>
 
 ```
 
-This p-value is 0.71 which means that given the null hypothesis is true (the mean medal rank for men and women in the United States is equal), there is a 0.71 chance that the alternative hypothesis is true. Therefore, given an $\alpha$ = 0.71, this null hypothesis cannot be rejected.
+This p-value is 0.71 which means that given the null hypothesis is true (the mean medal rank for men and women in the United States is equal), there is a 0.71 chance that the alternative hypothesis is true. Therefore, given an $\alpha$ = 0.01, this null hypothesis cannot be rejected.
+
+```{r}
+#| label: gender_model
+
+gender_model <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ Gender, data = OlympicGender) |>
+  tidy()
+
+gender_age_model <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete` + Gender, data = OlympicGender) |>
+  tidy()
+
+gender_age_model_AIC <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete` + Gender, data = OlympicGender) |>
+  glance() |>
+ pull(AIC)
+
+gender_model_AIC <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ Gender, data = OlympicGender) |>
+  glance() |>
+ pull(AIC)
+
+gender_age_model_int <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete` * Gender, data = OlympicGender) |>
+  tidy()
+
+gender_age_model_int_AIC <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete` * Gender, data = OlympicGender) |>
+  glance() |>
+ pull(AIC)
+
+gender_model
+gender_model_AIC
+gender_age_model
+gender_age_model_AIC
+gender_age_model_int
+gender_age_model_int_AIC
+```
+Medal rank and gender: 
+$\widehat{Medal\_Rank} = 1.929 + 0.02786*GenderWomen$
+
+Medal rank and gender and age (additive): 
+$\widehat{Medal\_Rank} = 1.78923 + 0.002598*Age\_of\_Athlete + 0.07410*GenderWomen$
+
+Medal rank and gender and age (interactive):
+$\widehat{Medal\_Rank} = 1.9233 - 0.00294*Age\_of\_Athlete - 0.2245*GenderWomen + 0.01279*Age\_of\_Athlete*GenderWomen$
+
+The additive model for predicting medal rank with gender and age is the best model since it has the lowest AIC value. However, this AIC value is nearly identical to the interactive model with the same explanatory variables included. Therefore, it is more likely that gender and age play a role in predicting success rather than simply age (which had an AIC of 4079 as seen in an earlier test) or gender (which has an AIC of 653) alone. This model says that for every one year increase of age, the mean medal rank increases (more towards silver and bronze) and this effect is heightened when the athlete is a woman. Therefore, this is evidence to suggest that older and female athletes may have less success than younger male athletes in the United States. 
+
+
+***Country***
 
 *Given that a participant was from a Scandinavian country and they won a gold medal, what is the probability that this was in a Nordic event, as these originated in Scandinavia?*
 
@@ -327,68 +437,6 @@ The probability that a gold medal won by a Scandinavian athlete was in a Nordic 
 
 The probability that a gold medal was won in the Winter Olympics in a Nordic event by an athlete from any country is 0.109.
 
-*What is the true mean age of gold medal winning Olympians?*
-
-```{r}
-#| label: set_boot
-
-set.seed(1924)
-
-Gold <- WinterOlympic |>
-  filter(Medal == "gold") |>
-  filter(!is.na(`Age of Athlete`))
-
-boot <- Gold |>
-  specify(response = `Age of Athlete`) |>
-  generate(reps = 5000, type = "bootstrap") |>
-  calculate(stat = "mean")
-```
-
-```{r}
-#| label: confidence
-
-set.seed(1924)
-
-boot |>
-  summarize(lower = quantile(stat, 0.05),
-            upper = quantile(stat, 0.95))
-
-```
-
-We are 90% confident the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old.
-
-```{r}
-#| label: boot-plot
-
-boot |>
-  ggplot(
-    aes(x = stat)) + 
-  geom_histogram(fill = "gold", color = "black", binwidth = 0.1) + 
-  geom_vline(xintercept = c(24.80165 , 25.29201)) + 
-  labs(title = "90% Confidence Interval",
-       subtitle = "True mean age of Gold Medal Winners",
-       x = "Age (Years)") +
-  theme_minimal()
-```
-
-*How does Winter Olympic age change with each successive year?*
-
-```{r}
-#| label: linear-reg-age-years
-linear_reg() |>
-  set_engine("lm") |>
-  fit(`Age of Athlete` ~ Year, data = Gold) |>
-  tidy()
-```
-
-<<<<<<< Updated upstream
-For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age. Therefore, this data suggests that the age of the medalists has not influenced success over time.
-=======
-For every 1 year increase, we estimate a mean change of 0.009 years in age for a Winter Olympic gold medal winner. This shows that age for the top athletes remains pretty consistent over time, meaning the winningest athletes are not getting older or younger throughout time, they are mostly the same age. Therefore, this data  suggests that the age of the medalists has not influenced success over time.
->>>>>>> Stashed changes
-
-$\widehat{Athlete\_Age} = 5.963 + 0.0096*Year$
-
 *How does the United States compare to Scandinavian countries in speedskating success?*
 
 ```{r}
@@ -398,18 +446,35 @@ WinterOlympic |>
           Sport == "Speedskating") |>
    ggplot(aes(x = Year, fill = Country)) +
    geom_density(alpha = 0.4) +
-   labs(title = "Olympic speedskating success by country \n throughout years")
+   labs(title = "Olympic speedskating (ice event) success by country \n throughout years")
 ```
 
-This density graph shows that the United States has become more successful in this event in recent years. However, in the early Olympic years, Finland had the most success in this event and since dropped off. Olympians from Norway and Sweden have had the least success in speedskaing in recent years.
+```{r}
+#| label: gender2
+WinterOlympic |>
+   filter(Country %in% c("United States", "Norway", "Sweden", "Denmark", "Finland"),
+          Sport == "Alpine Skiing") |>
+   ggplot(aes(x = Year, fill = Country)) +
+   geom_density(alpha = 0.4) +
+   labs(title = "Olympic alpine skiing (skiing/snowboarding event) success by country \n throughout years")
+```
+```{r}
+WinterOlympic |>
+   filter(Country %in% c("United States", "Norway", "Sweden", "Denmark", "Finland"),
+          Sport == "Cross-Country Skiing") |>
+   ggplot(aes(x = Year, fill = Country)) +
+   geom_density(alpha = 0.4) +
+   labs(title = "Olympic cross-country skiing success by country \n throughout years")
+```
+
+
+This density graph shows that the United States has become more successful in speedskating and alpine skiing in recent years. However, in the early Olympic years, Finland had the most success in speedskating and since dropped off. Olympians from Norway and Sweden have had the least success in speedskaing in recent years. Additionally, Scandinavian countries have recently statrted seeing greater success in alpine skiing, but the United States was more succcessful in the past. Yet, when looking at a Nordic event like cross-country skiing it is seen that the United States does not have any documented medals received while Scandinavian countries appear to outperform in this event as compared to the other two plotted. 
 
 **Results**
 
-<<<<<<< Updated upstream
 Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes name's have extraneous characters. Moving forward, we could reevaluate our data to ensure that there are no missing values (add in values for 2018 and 2022 Olympics) and no misspellings so that we can be confident with our results since we will be confident with the validity of our data.
-=======
+
 Before displaying our results, it is important to take into account the potential limitations. Some of these limitations include that there was data removed from Sports Reference -- there is no data for the years of 2018 or the 2022 Olympics. Also, the Country names change over time and some athletes name's have extraneous characters. 
->>>>>>> Stashed changes
 
 Our initial testing in this draft centered around the relationship between Winter Olympic success and age. The prime age for athletes to win medals was around 25 years old, and these results remained relatively consistent throughout gender and time. When looking at medal winners both over 50 years ago and within the last 50 years, the mean age of athletes is very similar. Before 1970, the mean age was 24.95 years old and in the last 50 years, the mean age was 25.22 years old. A bootstrap done to find the true mean age of all medal winners confirmed that we are 90% certain that the true mean age of gold medal winning winter Olympic athletes is between 24.80165 and 25.29201 years old. Both the values from the last 50 years and before the last 50 years fall within this confidence interval.
 
