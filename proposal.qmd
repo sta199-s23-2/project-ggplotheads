@@ -22,7 +22,7 @@ library(tidyverse)
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-**The data was collected five years ago and scraped from sports-reference.com by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current dataset.**
+**The data was collected five years ago and scraped from "Sports Reference" by Randi Griffin, an Evolutionary Anthropology graduate student of Duke University. This was initially made into a visualization that was then further adapted to the current data set.**
 
 -   Write a brief description of the observations.
 
