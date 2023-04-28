@@ -357,39 +357,60 @@ gender_model <- linear_reg() |>
  fit(`Medal Rank`~ Gender, data = OlympicGender) |>
   tidy()
 
+gender_model
+
+
+age_model <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete`, data = OlympicGender) |>
+ tidy()
+
+age_model
+
 gender_age_model <- linear_reg() |>
  set_engine("lm") |>
  fit(`Medal Rank`~ `Age of Athlete` + Gender, data = OlympicGender) |>
   tidy()
 
-gender_age_model_AIC <- linear_reg() |>
- set_engine("lm") |>
- fit(`Medal Rank`~ `Age of Athlete` + Gender, data = OlympicGender) |>
-  glance() |>
- pull(AIC)
-
-gender_model_AIC <- linear_reg() |>
- set_engine("lm") |>
- fit(`Medal Rank`~ Gender, data = OlympicGender) |>
-  glance() |>
- pull(AIC)
+gender_age_model
 
 gender_age_model_int <- linear_reg() |>
  set_engine("lm") |>
  fit(`Medal Rank`~ `Age of Athlete` * Gender, data = OlympicGender) |>
   tidy()
 
+gender_age_model_int
+
+
+gender_model_AIC <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ Gender, data = OlympicGender) |>
+ glance() |>
+ pull(AIC)
+
+age_model_AIC <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete`, data = OlympicGender) |>
+ glance() |>
+ pull(AIC)
+
+gender_age_model_AIC <- linear_reg() |>
+ set_engine("lm") |>
+ fit(`Medal Rank`~ `Age of Athlete` + Gender, data = OlympicGender) |>
+ glance() |>
+ pull(AIC)
+
+
+
 gender_age_model_int_AIC <- linear_reg() |>
  set_engine("lm") |>
  fit(`Medal Rank`~ `Age of Athlete` * Gender, data = OlympicGender) |>
-  glance() |>
+ glance() |>
  pull(AIC)
 
-gender_model
 gender_model_AIC
-gender_age_model
+age_model_AIC
 gender_age_model_AIC
-gender_age_model_int
 gender_age_model_int_AIC
 ```
 Medal rank and gender: 
@@ -401,7 +422,7 @@ $\widehat{Medal\_Rank} = 1.78923 + 0.002598*Age\_of\_Athlete + 0.07410*GenderWom
 Medal rank and gender and age (interactive):
 $\widehat{Medal\_Rank} = 1.9233 - 0.00294*Age\_of\_Athlete - 0.2245*GenderWomen + 0.01279*Age\_of\_Athlete*GenderWomen$
 
-The additive model for predicting medal rank with gender and age is the best model since it has the lowest AIC value. However, this AIC value is nearly identical to the interactive model with the same explanatory variables included. Therefore, it is more likely that gender and age play a role in predicting success rather than simply age (which had an AIC of 4079 as seen in an earlier test) or gender (which has an AIC of 653) alone. This model says that for every one year increase of age, the mean medal rank increases (more towards silver and bronze) and this effect is heightened when the athlete is a woman. Therefore, this is evidence to suggest that older and female athletes may have less success than younger male athletes in the United States. 
+The additive model for predicting medal rank with gender and age is the best model since it has the lowest AIC value. However, this AIC value is nearly identical to the interactive model with the same explanatory variables included. By looking at the AIC values, age is the best predictor of medal rank, as the age model has a lower AIC value than the gender model or the additive or interactive models. These models say that for every one year increase of age, the mean medal rank increases (more towards silver and bronze) and this effect is heightened when the athlete is a woman. Therefore, this is evidence to suggest that older and female athletes may have less success than younger male athletes in the United States. 
 
 
 ***Country***
