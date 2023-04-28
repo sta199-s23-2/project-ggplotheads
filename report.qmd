@@ -75,6 +75,13 @@ WinterOlympic |>
 
 ```
 
+We used a source from Topend Sports to create the variable of Nordic Events. 
+Nordic events represents 
+Biathalon (combining cross-country skiing and target shooting: individual, sprint, pursuit, mass start & relay events) 
+Cross-Country Skiing (individual and team sprint, freestyle, pursuit, classical and relays)
+Ski Jumping
+Nordic Combined (ski jumping and cross-country skiing)
+
 **Methodology continued**
 
 ****AGE****
